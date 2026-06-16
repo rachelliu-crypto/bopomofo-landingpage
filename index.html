@@ -1,429 +1,400 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="zh-TW">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.1">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #164fc7; -webkit-text-stroke: #164fc7}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #115d3e; -webkit-text-stroke: #115d3e}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #855504; -webkit-text-stroke: #855504}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #2e3133; -webkit-text-stroke: #2e3133}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #888f95; -webkit-text-stroke: #888f95}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #2e3133; -webkit-text-stroke: #2e3133; min-height: 16.0px}
-    span.s1 {font-kerning: none; background-color: #ffffff}
-    span.s2 {font-kerning: none; color: #2e3133; background-color: #ffffff; -webkit-text-stroke: 0px #2e3133}
-    span.s3 {font-kerning: none; color: #4d5055; background-color: #ffffff; -webkit-text-stroke: 0px #4d5055}
-    span.s4 {font-kerning: none; color: #164fc7; background-color: #ffffff; -webkit-text-stroke: 0px #164fc7}
-    span.s5 {font-kerning: none; color: #855504; background-color: #ffffff; -webkit-text-stroke: 0px #855504}
-    span.s6 {font-kerning: none; color: #115d3e; background-color: #ffffff; -webkit-text-stroke: 0px #115d3e}
-    span.s7 {font-kerning: none}
-    span.s8 {font-kerning: none; color: #6624a5; background-color: #ffffff; -webkit-text-stroke: 0px #6624a5}
-    span.s9 {font-kerning: none; color: #888f95; background-color: #ffffff; -webkit-text-stroke: 0px #888f95}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雙課大禮包限時特惠</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script> 
+  <!-- Font Awesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: transparent; 
+      margin: 0;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* 參考對照組：主卡片改為深紫漸層與厚白邊框樣式 */
+    .mega-course-card {
+      background: linear-gradient(to bottom right, #5b4a9a, #3a2e66); 
+      border: 4px solid #ffffff; 
+      border-radius: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px -10px rgba(72, 58, 122, 0.5); 
+      transition: all 0.3s ease;
+    }
+
+    .mega-course-card:hover {
+      box-shadow: 0 25px 50px -10px rgba(72, 58, 122, 0.7);
+    }
+
+    /* 參考對照組：跑馬燈光束閃過效果 */
+    .shine::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(255, 255, 255, 0.25) 50%,
+        transparent 100%
+      );
+      transform: skewX(-25deg);
+      pointer-events: none;
+      z-index: 5;
+      animation: shine-effect 5s ease-in-out infinite;
+    }
+
+    @keyframes shine-effect {
+      0% { left: -150%; }
+      20%, 100% { left: 150%; }
+    }
+
+    /* 參考對照組：呼吸按鈕動畫 - 增加點擊衝動 */
+    @keyframes pulse-subtle {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+    
+    .pulse-btn {
+      animation: pulse-subtle 2s infinite ease-in-out;
+    }
+
+    /* 漸層互動按鈕：改為亮黃色主題 */
+    .btn-action {
+      background: linear-gradient(to bottom, #fbbf24, #f59e0b);
+      color: #3a2e66;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 10px 20px -5px rgba(251, 191, 36, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-action:hover {
+      background: linear-gradient(to bottom, #fef08a, #fbbf24);
+      transform: scale(1.03);
+      box-shadow: 0 15px 25px -5px rgba(251, 191, 36, 0.6);
+    }
   </style>
 </head>
-<body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE</span><span class="s2"> html</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s4">html</span><span class="s2"> </span><span class="s5">lang</span><span class="s3">=</span><span class="s1">"zh-TW"</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s3">&lt;</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">meta</span><span class="s2"> </span><span class="s1">charset</span><span class="s3">=</span><span class="s6">"UTF-8"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">meta</span><span class="s2"> </span><span class="s5">name</span><span class="s3">=</span><span class="s1">"viewport"</span><span class="s2"> </span><span class="s5">content</span><span class="s3">=</span><span class="s1">"width=device-width, initial-scale=1.0"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">title</span><span class="s3">&gt;</span><span class="s1">雙課大禮包限時特惠</span><span class="s3">&lt;/</span><span class="s4">title</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- Tailwind CSS --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s2"> </span><span class="s5">src</span><span class="s3">=</span><span class="s1">"https://cdn.tailwindcss.com"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span><span class="s2"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- Font Awesome Icons --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">link</span><span class="s2"> </span><span class="s5">href</span><span class="s3">=</span><span class="s1">"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"</span><span class="s2"> </span><span class="s5">rel</span><span class="s3">=</span><span class="s1">"stylesheet"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- Google Fonts --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">link</span><span class="s2"> </span><span class="s5">href</span><span class="s3">=</span><span class="s1">"https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;display=swap"</span><span class="s2"> </span><span class="s5">rel</span><span class="s3">=</span><span class="s1">"stylesheet"</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">body</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s5">font-family:</span><span class="s2"> </span><span class="s1">'Noto Sans TC'</span><span class="s3">,</span><span class="s2"> </span><span class="s1">sans-serif</span><span class="s3">;</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">background-color:</span><span class="s2"> </span><span class="s6">transparent</span><span class="s3">;</span><span class="s2"><span class="Apple-converted-space"> </span></span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s5">margin:</span><span class="s1"> </span><span class="s6">0</span><span class="s3">;</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">overflow-x:</span><span class="s2"> </span><span class="s6">hidden</span><span class="s3">;</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">-webkit-font-smoothing:</span><span class="s2"> </span><span class="s6">antialiased</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">}</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">/* 參考對照組：主卡片改為深紫漸層與厚白邊框樣式 */</span></p>
-<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">.mega-course-card</span><span class="s2"> </span><span class="s3">{</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s5">background:</span><span class="s2"> </span><span class="s1">linear-gradient(to</span><span class="s2"> </span><span class="s1">bottom</span><span class="s2"> </span><span class="s1">right</span><span class="s3">,</span><span class="s2"> </span><span class="s1">#5b4a9a</span><span class="s3">,</span><span class="s2"> </span><span class="s1">#3a2e66)</span><span class="s3">;</span><span class="s2"><span class="Apple-converted-space"> </span></span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s5">border:</span><span class="s2"> </span><span class="s1">4px</span><span class="s2"> </span><span class="s1">solid</span><span class="s2"> </span><span class="s1">#ffffff</span><span class="s3">;</span><span class="s2"><span class="Apple-converted-space"> </span></span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">border-radius:</span><span class="s2"> </span><span class="s6">2.5rem</span><span class="s3">;</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">position:</span><span class="s2"> </span><span class="s6">relative</span><span class="s3">;</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">overflow:</span><span class="s2"> </span><span class="s6">hidden</span><span class="s3">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s5">box-shadow:</span><span class="s2"> </span><span class="s1">0</span><span class="s2"> </span><span class="s1">20px</span><span class="s2"> </span><span class="s1">40px</span><span class="s2"> </span><span class="s1">-10px</span><span class="s2"> </span><span class="s1">rgba(72</span><span class="s3">,</span><span class="s2"> </span><span class="s1">58</span><span class="s3">,</span><span class="s2"> </span><span class="s1">122</span><span class="s3">,</span><span class="s2"> </span><span class="s1">0.5)</span><span class="s3">;</span><span class="s2"><span class="Apple-converted-space"> </span></span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">transition:</span><span class="s2"> </span><span class="s6">all</span><span class="s2"> </span><span class="s6">0.3s</span><span class="s2"> </span><span class="s6">ease</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">}</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">.mega-course-card:hover</span><span class="s2"> </span><span class="s3">{</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s5">box-shadow:</span><span class="s2"> </span><span class="s1">0</span><span class="s2"> </span><span class="s1">25px</span><span class="s2"> </span><span class="s1">50px</span><span class="s2"> </span><span class="s1">-10px</span><span class="s2"> </span><span class="s1">rgba(72</span><span class="s3">,</span><span class="s2"> </span><span class="s1">58</span><span class="s3">,</span><span class="s2"> </span><span class="s1">122</span><span class="s3">,</span><span class="s2"> </span><span class="s1">0.7)</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">}</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">/* 參考對照組：跑馬燈光束閃過效果 */</span></p>
-<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">.shine::after</span><span class="s2"> </span><span class="s3">{</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">content:</span><span class="s2"> </span><span class="s6">''</span><span class="s3">;</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">position:</span><span class="s2"> </span><span class="s6">absolute</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s5">top:</span><span class="s1"> </span><span class="s6">0</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s5">left:</span><span class="s1"> </span><span class="s6">-150%</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s5">width:</span><span class="s1"> </span><span class="s6">60%</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s5">height:</span><span class="s1"> </span><span class="s6">100%</span><span class="s3">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s5">background:</span><span class="s2"> </span><span class="s1">linear-gradient(</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">to</span><span class="s1"> </span><span class="s6">right</span><span class="s3">,</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s1">transparent</span><span class="s2"> </span><span class="s1">0%</span><span class="s3">,</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s1">rgba(255</span><span class="s3">,</span><span class="s2"> </span><span class="s1">255</span><span class="s3">,</span><span class="s2"> </span><span class="s1">255</span><span class="s3">,</span><span class="s2"> </span><span class="s1">0.25)</span><span class="s2"> </span><span class="s1">50%</span><span class="s3">,</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s1">transparent</span><span class="s2"> </span><span class="s1">100%</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">)</span><span class="s3">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s5">transform:</span><span class="s2"> </span><span class="s1">skewX(-25deg)</span><span class="s3">;</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">pointer-events:</span><span class="s2"> </span><span class="s6">none</span><span class="s3">;</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">z-index:</span><span class="s2"> </span><span class="s6">5</span><span class="s3">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s5">animation:</span><span class="s2"> </span><span class="s1">shine-effect</span><span class="s2"> </span><span class="s1">5s</span><span class="s2"> </span><span class="s1">ease-in-out</span><span class="s2"> </span><span class="s1">infinite</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">}</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s8">@keyframes</span><span class="s2"> </span><span class="s1">shine-effect</span><span class="s2"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">0%</span><span class="s1"> </span><span class="s3">{</span><span class="s1"> </span><span class="s5">left:</span><span class="s1"> </span><span class="s6">-150%</span><span class="s3">;</span><span class="s1"> </span><span class="s3">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">20%</span><span class="s3">,</span><span class="s1"> </span><span class="s6">100%</span><span class="s1"> </span><span class="s3">{</span><span class="s1"> </span><span class="s5">left:</span><span class="s1"> </span><span class="s6">150%</span><span class="s3">;</span><span class="s1"> </span><span class="s3">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">}</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">/* 參考對照組：呼吸按鈕動畫 - 增加點擊衝動 */</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s8">@keyframes</span><span class="s2"> </span><span class="s1">pulse-subtle</span><span class="s2"> </span><span class="s3">{</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">0%</span><span class="s3">,</span><span class="s2"> </span><span class="s1">100%</span><span class="s2"> </span><span class="s3">{</span><span class="s2"> </span><span class="s5">transform:</span><span class="s2"> </span><span class="s1">scale(1)</span><span class="s3">;</span><span class="s2"> </span><span class="s3">}</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">50%</span><span class="s2"> </span><span class="s3">{</span><span class="s2"> </span><span class="s5">transform:</span><span class="s2"> </span><span class="s1">scale(1.03)</span><span class="s3">;</span><span class="s2"> </span><span class="s3">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">}</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">.pulse-btn</span><span class="s2"> </span><span class="s3">{</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s5">animation:</span><span class="s2"> </span><span class="s1">pulse-subtle</span><span class="s2"> </span><span class="s1">2s</span><span class="s2"> </span><span class="s1">infinite</span><span class="s2"> </span><span class="s1">ease-in-out</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">}</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">/* 漸層互動按鈕：改為亮黃色主題 */</span></p>
-<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">.btn-action</span><span class="s2"> </span><span class="s3">{</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s5">background:</span><span class="s2"> </span><span class="s1">linear-gradient(to</span><span class="s2"> </span><span class="s1">bottom</span><span class="s3">,</span><span class="s2"> </span><span class="s1">#fbbf24</span><span class="s3">,</span><span class="s2"> </span><span class="s1">#f59e0b)</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s5">color:</span><span class="s1"> </span><span class="s6">#3a2e66</span><span class="s3">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s5">transition:</span><span class="s2"> </span><span class="s1">all</span><span class="s2"> </span><span class="s1">0.3s</span><span class="s2"> </span><span class="s1">cubic-bezier(0.175</span><span class="s3">,</span><span class="s2"> </span><span class="s1">0.885</span><span class="s3">,</span><span class="s2"> </span><span class="s1">0.32</span><span class="s3">,</span><span class="s2"> </span><span class="s1">1.275)</span><span class="s3">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s5">box-shadow:</span><span class="s2"> </span><span class="s1">0</span><span class="s2"> </span><span class="s1">10px</span><span class="s2"> </span><span class="s1">20px</span><span class="s2"> </span><span class="s1">-5px</span><span class="s2"> </span><span class="s1">rgba(251</span><span class="s3">,</span><span class="s2"> </span><span class="s1">191</span><span class="s3">,</span><span class="s2"> </span><span class="s1">36</span><span class="s3">,</span><span class="s2"> </span><span class="s1">0.4)</span><span class="s3">;</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">display:</span><span class="s2"> </span><span class="s6">flex</span><span class="s3">;</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">align-items:</span><span class="s2"> </span><span class="s6">center</span><span class="s3">;</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">justify-content:</span><span class="s2"> </span><span class="s6">center</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">}</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">.btn-action:hover</span><span class="s2"> </span><span class="s3">{</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s5">background:</span><span class="s2"> </span><span class="s1">linear-gradient(to</span><span class="s2"> </span><span class="s1">bottom</span><span class="s3">,</span><span class="s2"> </span><span class="s1">#fef08a</span><span class="s3">,</span><span class="s2"> </span><span class="s1">#fbbf24)</span><span class="s3">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s5">transform:</span><span class="s2"> </span><span class="s1">scale(1.03)</span><span class="s3">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s5">box-shadow:</span><span class="s2"> </span><span class="s1">0</span><span class="s2"> </span><span class="s1">15px</span><span class="s2"> </span><span class="s1">25px</span><span class="s2"> </span><span class="s1">-5px</span><span class="s2"> </span><span class="s1">rgba(251</span><span class="s3">,</span><span class="s2"> </span><span class="s1">191</span><span class="s3">,</span><span class="s2"> </span><span class="s1">36</span><span class="s3">,</span><span class="s2"> </span><span class="s1">0.6)</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">}</span></p>
-<p class="p1"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s3">&lt;/</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s4">body</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"py-6 px-3 sm:px-6"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">section</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"max-w-5xl mx-auto relative"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- 大禮包一體化卡片 (加入 shine 光束動效) --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"mega-course-card z-10 shine"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"p-4 sm:p-8 space-y-6"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s1">&lt;!-- 主副標題區 (完全一致的禮物盒與講師標題排版) --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"flex flex-col items-center w-full mb-6 sm:mb-8 text-center"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">          </span></span></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">          </span></span><span class="s1">&lt;!-- 禮物盒與標題在同一行 --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"flex flex-row items-center justify-center gap-3 sm:gap-4 mb-3"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;!-- 禮物盒圖示 --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"bg-yellow-400 w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl border-b-4 border-yellow-600 shrink-0"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s4">i</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-gift text-purple-900 text-lg sm:text-xl"</span><span class="s3">&gt;&lt;/</span><span class="s4">i</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s9">&lt;!-- 標題 --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s4">h3</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"text-base sm:text-lg font-black text-white tracking-tight"</span><span class="s3">&gt;</span><span class="s2">還有！超值合購優惠</span><span class="s3">&lt;/</span><span class="s4">h3</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">          </span></span><span class="s1">&lt;!-- 核心主打標題 --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;</span><span class="s4">h4</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"text-3xl sm:text-4xl font-black text-white mt-2 tracking-tight"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>注音趴 ＋ 拼音趴 </span><span class="s3">&lt;</span><span class="s4">span</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"bg-gradient-to-r from-yellow-300 to-amber-400 bg-clip-text text-transparent ml-1 sm:ml-2"</span><span class="s3">&gt;</span><span class="s2">雙課大禮包</span><span class="s3">&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;/</span><span class="s4">h4</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s1">&lt;!-- 課程亮點展示區 (電腦版不輪播、改並排) --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"relative pb-1 mb-2 sm:mb-4"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">          </span></span></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">          </span></span><span class="s1">&lt;!-- 輪播與並排主容器 (在移動端加入 touch-pan-y 確保不干擾 Y 軸上下捲動) --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"overflow-hidden md:overflow-visible rounded-2xl touch-pan-y"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">id</span><span class="s3">=</span><span class="s1">"carousel-track"</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"flex transition-transform duration-500 ease-out md:!transform-none touch-pan-y"</span><span class="s2"> </span><span class="s5">style</span><span class="s3">=</span><span class="s1">"transform: translateX(0%);"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">              </span></span><span class="s1">&lt;!-- 幻燈片 1：兒童注音趴 (改為精緻白底高質感卡片) --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"w-full md:w-1/2 shrink-0 md:shrink px-2 relative"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"bg-white rounded-3xl p-4 sm:p-5 border border-amber-200/60 flex flex-col gap-4 justify-between h-full relative overflow-hidden shadow-md"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                  </span></span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                  </span></span><span class="s9">&lt;!-- 圖片區 --&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                  </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s5">class</span><span class="s3">=</span><span class="s6">"w-full relative"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"relative rounded-2xl overflow-hidden aspect-[16/9] bg-slate-50 border border-slate-100 shadow-sm"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                      </span></span><span class="s3">&lt;</span><span class="s4">img</span><span class="s2"> </span><span class="s5">src</span><span class="s3">=</span><span class="s1">"https://image.fevercdn.com?bucket=picture-original.fevercdn.com&amp;filepath=parenting%2F5%2F2103%2Ffbb7121133203da17d96ec12.png"</span><span class="s2"> </span><span class="s5">alt</span><span class="s3">=</span><span class="s1">"注音趴課程"</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"w-full h-full object-cover"</span><span class="s2"> </span><span class="s5">onerror</span><span class="s3">=</span><span class="s1">"this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&amp;fit=crop&amp;w=600&amp;q=80'"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                  </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">                  </span></span><span class="s1">&lt;!-- 底部內容區 (雙欄對齊排版) --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                  </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"flex items-center justify-between gap-4 mt-2"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s9">&lt;!-- 左欄：亮點文字清單 --&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s5">class</span><span class="s3">=</span><span class="s6">"flex-1"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                      </span></span><span class="s3">&lt;</span><span class="s4">ul</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"space-y-2 text-slate-800 text-sm sm:text-base md:text-lg"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s4">li</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"flex items-center gap-1.5"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                          </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"text-amber-500 shrink-0"</span><span class="s3">&gt;&lt;</span><span class="s4">i</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-circle-check"</span><span class="s3">&gt;&lt;/</span><span class="s4">i</span><span class="s3">&gt;&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                          </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s3">&gt;&lt;</span><span class="s4">strong</span><span class="s3">&gt;</span><span class="s1">獨家圖像聯想</span><span class="s3">&lt;/</span><span class="s4">strong</span><span class="s3">&gt;&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s4">li</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s4">li</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"flex items-center gap-1.5"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                          </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"text-amber-500 shrink-0"</span><span class="s3">&gt;&lt;</span><span class="s4">i</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-circle-check"</span><span class="s3">&gt;&lt;/</span><span class="s4">i</span><span class="s3">&gt;&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                          </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s3">&gt;&lt;</span><span class="s4">strong</span><span class="s3">&gt;</span><span class="s1">簡單注音唸謠</span><span class="s3">&lt;/</span><span class="s4">strong</span><span class="s3">&gt;&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s4">li</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s4">li</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"flex items-center gap-1.5"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                          </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"text-amber-500 shrink-0"</span><span class="s3">&gt;&lt;</span><span class="s4">i</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-circle-check"</span><span class="s3">&gt;&lt;/</span><span class="s4">i</span><span class="s3">&gt;&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                          </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s3">&gt;&lt;</span><span class="s4">strong</span><span class="s3">&gt;</span><span class="s1">趣味發音練習</span><span class="s3">&lt;/</span><span class="s4">strong</span><span class="s3">&gt;&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s4">li</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                      </span></span><span class="s3">&lt;/</span><span class="s4">ul</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s9">&lt;!-- 右欄：直角矩形海報框 --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"relative shrink-0 mr-2 sm:mr-4"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                      </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"w-24 h-32 sm:w-28 sm:h-38 rounded-xl overflow-hidden border-4 border-white shadow-xl bg-white shrink-0"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s4">img</span><span class="s2"> </span><span class="s5">src</span><span class="s3">=</span><span class="s1">"https://image.fevercdn.com?bucket=picture-original.fevercdn.com&amp;filepath=parenting%2F5%2F2103%2F44a14f87c1f707e14a8b648c.png"</span><span class="s2"> </span><span class="s5">alt</span><span class="s3">=</span><span class="s1">"注音海報"</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"w-full h-full object-cover"</span><span class="s2"> </span><span class="s5">onerror</span><span class="s3">=</span><span class="s1">"this.src='https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?auto=format&amp;fit=crop&amp;w=300&amp;q=80'"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                      </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                      </span></span><span class="s9">&lt;!-- 右上角膠囊標籤 --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                      </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"absolute -top-1.5 -right-2 sm:-top-2 sm:-right-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-black text-[11px] sm:text-sm px-2.5 py-1 rounded-full shadow-md whitespace-nowrap border-2 border-white tracking-wide"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>\ 附注音海報 /</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                      </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                  </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">              </span></span><span class="s1">&lt;!-- 幻燈片 2：兒童拼音趴 (改為精緻白底高質感卡片) --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"w-full md:w-1/2 shrink-0 md:shrink px-2 relative"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"bg-white rounded-3xl p-4 sm:p-5 border border-purple-200/60 flex flex-col gap-4 justify-between h-full relative overflow-hidden shadow-md"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                  </span></span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                  </span></span><span class="s9">&lt;!-- 圖片區 --&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                  </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s5">class</span><span class="s3">=</span><span class="s6">"w-full relative"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"relative rounded-2xl overflow-hidden aspect-[16/9] bg-slate-50 border border-slate-100 shadow-sm"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                      </span></span><span class="s3">&lt;</span><span class="s4">img</span><span class="s2"> </span><span class="s5">src</span><span class="s3">=</span><span class="s1">"https://image.fevercdn.com?bucket=picture-original.fevercdn.com&amp;filepath=parenting%2F5%2F2103%2F8a83beff83b6bf77df8bbe1f.png"</span><span class="s2"> </span><span class="s5">alt</span><span class="s3">=</span><span class="s1">"拼音趴課程"</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"w-full h-full object-cover"</span><span class="s2"> </span><span class="s5">onerror</span><span class="s3">=</span><span class="s1">"this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&amp;fit=crop&amp;w=600&amp;q=80'"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                  </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">                  </span></span><span class="s1">&lt;!-- 底部內容區 (雙欄對齊排版) --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                  </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"flex items-center justify-between gap-4 mt-2"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s9">&lt;!-- 左欄：亮點文字清單 --&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s5">class</span><span class="s3">=</span><span class="s6">"flex-1"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                      </span></span><span class="s3">&lt;</span><span class="s4">ul</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"space-y-2 text-slate-800 text-sm sm:text-base md:text-lg"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s4">li</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"flex items-center gap-1.5"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                          </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"text-purple-600 shrink-0"</span><span class="s3">&gt;&lt;</span><span class="s4">i</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-circle-check"</span><span class="s3">&gt;&lt;/</span><span class="s4">i</span><span class="s3">&gt;&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                          </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s3">&gt;&lt;</span><span class="s4">strong</span><span class="s3">&gt;</span><span class="s1">有趣拼音故事</span><span class="s3">&lt;/</span><span class="s4">strong</span><span class="s3">&gt;&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s4">li</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s4">li</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"flex items-center gap-1.5"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                          </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"text-purple-600 shrink-0"</span><span class="s3">&gt;&lt;</span><span class="s4">i</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-circle-check"</span><span class="s3">&gt;&lt;/</span><span class="s4">i</span><span class="s3">&gt;&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                          </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s3">&gt;&lt;</span><span class="s4">strong</span><span class="s3">&gt;</span><span class="s1">進階拼音唸謠</span><span class="s3">&lt;/</span><span class="s4">strong</span><span class="s3">&gt;&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s4">li</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s4">li</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"flex items-center gap-1.5"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                          </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"text-purple-600 shrink-0"</span><span class="s3">&gt;&lt;</span><span class="s4">i</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-circle-check"</span><span class="s3">&gt;&lt;/</span><span class="s4">i</span><span class="s3">&gt;&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                          </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s3">&gt;&lt;</span><span class="s4">strong</span><span class="s3">&gt;</span><span class="s1">告別易混淆注音</span><span class="s3">&lt;/</span><span class="s4">strong</span><span class="s3">&gt;&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s4">li</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                      </span></span><span class="s3">&lt;/</span><span class="s4">ul</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s9">&lt;!-- 右欄：直角矩形字卡框 --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"relative shrink-0 mr-2 sm:mr-4"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                      </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"w-24 h-32 sm:w-28 sm:h-38 rounded-xl overflow-hidden border-4 border-white shadow-lg bg-white shrink-0"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s4">img</span><span class="s2"> </span><span class="s5">src</span><span class="s3">=</span><span class="s1">"https://image.fevercdn.com?bucket=picture-original.fevercdn.com&amp;filepath=parenting%2F5%2F2103%2F1c0a4376047c3360755fcc01.png"</span><span class="s2"> </span><span class="s5">alt</span><span class="s3">=</span><span class="s1">"拼音字卡"</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"w-full h-full object-cover"</span><span class="s2"> </span><span class="s5">style</span><span class="s3">=</span><span class="s1">"object-position: 95% center;"</span><span class="s2"> </span><span class="s5">onerror</span><span class="s3">=</span><span class="s1">"this.src='https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&amp;fit=crop&amp;w=300&amp;q=80'"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                      </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                      </span></span><span class="s9">&lt;!-- 右上角膠囊標籤 --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                      </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"absolute -top-1.5 -right-2 sm:-top-2 sm:-right-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-black text-[11px] sm:text-sm px-2.5 py-1 rounded-full shadow-md whitespace-nowrap border-2 border-white tracking-wide"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>\ 附拼音字卡 /</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                      </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                  </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">          </span></span><span class="s1">&lt;!-- 輪播左右操控箭頭 (md:hidden 在電腦版隱藏) --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;</span><span class="s4">button</span><span class="s2"> </span><span class="s5">onclick</span><span class="s3">=</span><span class="s1">"prevSlide()"</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"absolute left-2 top-[40%] md:top-1/2 -translate-y-1/2 bg-white/95 text-slate-800 hover:text-purple-600 w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center shadow-sm hover:shadow-md transition-all z-20 focus:outline-none border border-slate-100 md:hidden"</span><span class="s2"> </span><span class="s5">aria-label</span><span class="s3">=</span><span class="s1">"上一個課程"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s4">i</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-chevron-left text-xs"</span><span class="s3">&gt;&lt;/</span><span class="s4">i</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;/</span><span class="s4">button</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;</span><span class="s4">button</span><span class="s2"> </span><span class="s5">onclick</span><span class="s3">=</span><span class="s1">"nextSlide()"</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"absolute right-2 top-[40%] md:top-1/2 -translate-y-1/2 bg-white/95 text-slate-800 hover:text-purple-600 w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center shadow-sm hover:shadow-md transition-all z-20 focus:outline-none border border-slate-100 md:hidden"</span><span class="s2"> </span><span class="s5">aria-label</span><span class="s3">=</span><span class="s1">"下一個課程"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s4">i</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-chevron-right text-xs"</span><span class="s3">&gt;&lt;/</span><span class="s4">i</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;/</span><span class="s4">button</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">          </span></span><span class="s1">&lt;!-- 輪播指示點點 (md:hidden 在電腦版隱藏) --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"flex md:hidden justify-center gap-2 mt-3"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s4">button</span><span class="s2"> </span><span class="s5">onclick</span><span class="s3">=</span><span class="s1">"goToSlide(0)"</span><span class="s2"> </span><span class="s5">id</span><span class="s3">=</span><span class="s1">"dot-0"</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"w-1.5 h-1.5 rounded-full transition-all duration-300 bg-yellow-400 scale-110"</span><span class="s2"> </span><span class="s5">aria-label</span><span class="s3">=</span><span class="s1">"查看注音趴"</span><span class="s3">&gt;&lt;/</span><span class="s4">button</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s4">button</span><span class="s2"> </span><span class="s5">onclick</span><span class="s3">=</span><span class="s1">"goToSlide(1)"</span><span class="s2"> </span><span class="s5">id</span><span class="s3">=</span><span class="s1">"dot-1"</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"w-1.5 h-1.5 rounded-full transition-all duration-300 bg-white/30 hover:bg-white/50"</span><span class="s2"> </span><span class="s5">aria-label</span><span class="s3">=</span><span class="s1">"查看拼音趴"</span><span class="s3">&gt;&lt;/</span><span class="s4">button</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s1">&lt;!-- 結帳促銷區 (改為半透明磨砂質感，搭配主色配色) --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-white/20 shadow-md"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s5">class</span><span class="s3">=</span><span class="s6">"space-y-4"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;!-- 上排：價格與折扣碼一鍵複製 --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-white/10 pb-3"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s9">&lt;!-- 左側價格 --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"text-center sm:text-left"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"text-white/60 line-through text-xs block"</span><span class="s3">&gt;</span><span class="s2">原價 $7,600</span><span class="s3">&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"text-yellow-400 font-black text-2xl sm:text-3xl tracking-tight mt-0.5 whitespace-nowrap"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                  </span>NT$ </span><span class="s3">&lt;</span><span class="s4">span</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"text-3xl sm:text-4xl text-yellow-300"</span><span class="s3">&gt;</span><span class="s2">5,490</span><span class="s3">&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">              </span></span><span class="s1">&lt;!-- 右側折扣碼複製 (改為與對照組一致的半透明毛玻璃邊框與高亮代碼) --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s5">id</span><span class="s3">=</span><span class="s1">"coupon-btn"</span><span class="s2"> </span><span class="s5">onclick</span><span class="s3">=</span><span class="s1">"copyCouponCode('GPM300')"</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"cursor-pointer group flex items-center justify-center gap-1.5 bg-white/10 border border-white/20 hover:bg-white/15 px-3.5 py-2 rounded-full text-xs sm:text-sm text-white font-bold active:scale-95 transition-all w-fit mx-auto sm:mx-0 shrink-0"</span><span class="s2"> </span><span class="s5">title</span><span class="s3">=</span><span class="s1">"點擊一鍵複製代碼"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">i</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-ticket text-yellow-400 mr-1 animate-pulse"</span><span class="s3">&gt;&lt;/</span><span class="s4">i</span><span class="s3">&gt;</span><span class="s2"><span class="Apple-converted-space"> </span></span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s3">&gt;</span><span class="s2">輸入代碼 </span><span class="s3">&lt;</span><span class="s4">span</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"bg-yellow-400 text-purple-950 px-2 py-0.5 rounded mx-0.5 font-mono text-xs font-black"</span><span class="s3">&gt;</span><span class="s2">GPM300</span><span class="s3">&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span><span class="s2"> 再折 300</span><span class="s3">&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s1"> </span><span class="s5">class</span><span class="s3">=</span><span class="s6">"text-white/20"</span><span class="s3">&gt;</span><span class="s1">|</span><span class="s3">&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"text-yellow-400 flex items-center gap-0.5 shrink-0"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                  </span></span><span class="s3">&lt;</span><span class="s4">i</span><span class="s1"> </span><span class="s5">class</span><span class="s3">=</span><span class="s6">"fa-regular fa-copy"</span><span class="s3">&gt;&lt;/</span><span class="s4">i</span><span class="s3">&gt;</span><span class="s1">複製</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;!-- 下排：領取限時優惠按鈕 (加入 pulse-btn 微呼吸效果與金黃漸層) --&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s4">a</span><span class="s2"> </span><span class="s5">href</span><span class="s3">=</span><span class="s1">"https://learning.parenting.com.tw/plans/467de1dc-cefd-4a7c-a852-ee32c81e91a2?utm_source=SiteTopic.website&amp;utm_medium=referral&amp;utm_campaign=cp_r_2606bopomofo_course_bundle_lp02_20260616"</span><span class="s2"> </span><span class="s5">target</span><span class="s3">=</span><span class="s1">"_blank"</span><span class="s2"> </span><span class="s5">rel</span><span class="s3">=</span><span class="s1">"noopener noreferrer"</span><span class="s2"> </span><span class="s5">class</span><span class="s3">=</span><span class="s1">"btn-action pulse-btn w-full py-3.5 px-5 rounded-2xl font-black text-base sm:text-xl transition-all duration-300 text-center block"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s1"> </span><span class="s5">class</span><span class="s3">=</span><span class="s6">"whitespace-nowrap"</span><span class="s3">&gt;</span><span class="s1">搶先領取限時優惠 ➔</span><span class="s3">&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s4">a</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p1"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">section</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- 貼心一鍵複製代碼與輪播手勢腳本 --&gt;</span></p>
-<p class="p1"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">// --- 輪播邏輯機制 (僅在非 md 電腦版寬度下生效) ---</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">let</span><span class="s1"> currentSlide </span><span class="s3">=</span><span class="s1"> </span><span class="s5">0</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">const</span><span class="s1"> totalSlides </span><span class="s3">=</span><span class="s1"> </span><span class="s5">2</span><span class="s3">;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">function</span><span class="s1"> updateCarousel</span><span class="s3">()</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">// 如果視窗寬度大於等於 768px (md)，不執行輪播位移</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s8">if</span><span class="s1"> </span><span class="s3">(</span><span class="s1">window</span><span class="s3">.</span><span class="s1">innerWidth </span><span class="s3">&gt;=</span><span class="s1"> </span><span class="s5">768</span><span class="s3">)</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>document</span><span class="s3">.</span><span class="s1">getElementById</span><span class="s3">(</span><span class="s6">'carousel-track'</span><span class="s3">).</span><span class="s1">style</span><span class="s3">.</span><span class="s1">transform </span><span class="s3">=</span><span class="s1"> </span><span class="s6">'none'</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">return</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">}</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s8">const</span><span class="s1"> track </span><span class="s3">=</span><span class="s1"> document</span><span class="s3">.</span><span class="s1">getElementById</span><span class="s3">(</span><span class="s6">'carousel-track'</span><span class="s3">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>track</span><span class="s3">.</span><span class="s1">style</span><span class="s3">.</span><span class="s1">transform </span><span class="s3">=</span><span class="s1"> </span><span class="s6">`translateX(-</span><span class="s3">${</span><span class="s1">currentSlide </span><span class="s3">*</span><span class="s1"> </span><span class="s5">100</span><span class="s3">}</span><span class="s6">%)`</span><span class="s3">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">// 更新圓點樣式</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s8">for</span><span class="s1"> </span><span class="s3">(</span><span class="s8">let</span><span class="s1"> i </span><span class="s3">=</span><span class="s1"> </span><span class="s5">0</span><span class="s3">;</span><span class="s1"> i </span><span class="s3">&lt;</span><span class="s1"> totalSlides</span><span class="s3">;</span><span class="s1"> i</span><span class="s3">++)</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">const</span><span class="s1"> dot </span><span class="s3">=</span><span class="s1"> document</span><span class="s3">.</span><span class="s1">getElementById</span><span class="s3">(</span><span class="s6">`dot-</span><span class="s3">${</span><span class="s1">i</span><span class="s3">}</span><span class="s6">`</span><span class="s3">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">if</span><span class="s1"> </span><span class="s3">(</span><span class="s1">dot</span><span class="s3">)</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s8">if</span><span class="s1"> </span><span class="s3">(</span><span class="s1">i </span><span class="s3">===</span><span class="s1"> currentSlide</span><span class="s3">)</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>dot</span><span class="s3">.</span><span class="s2">classList</span><span class="s3">.</span><span class="s2">remove</span><span class="s3">(</span><span class="s1">'bg-white/30'</span><span class="s3">,</span><span class="s2"> </span><span class="s1">'hover:bg-white/50'</span><span class="s3">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>dot</span><span class="s3">.</span><span class="s1">classList</span><span class="s3">.</span><span class="s1">add</span><span class="s3">(</span><span class="s6">'bg-yellow-400'</span><span class="s3">,</span><span class="s1"> </span><span class="s6">'scale-110'</span><span class="s3">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s3">}</span><span class="s1"> </span><span class="s8">else</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>dot</span><span class="s3">.</span><span class="s1">classList</span><span class="s3">.</span><span class="s1">remove</span><span class="s3">(</span><span class="s6">'bg-yellow-400'</span><span class="s3">,</span><span class="s1"> </span><span class="s6">'scale-110'</span><span class="s3">);</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>dot</span><span class="s3">.</span><span class="s2">classList</span><span class="s3">.</span><span class="s2">add</span><span class="s3">(</span><span class="s1">'bg-white/30'</span><span class="s3">,</span><span class="s2"> </span><span class="s1">'hover:bg-white/50'</span><span class="s3">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s3">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">}</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">// 監聽視窗縮放，確保在桌機/手機切換時顯示正常</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>window</span><span class="s3">.</span><span class="s1">addEventListener</span><span class="s3">(</span><span class="s6">'resize'</span><span class="s3">,</span><span class="s1"> updateCarousel</span><span class="s3">);</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">function</span><span class="s1"> nextSlide</span><span class="s3">()</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s8">if</span><span class="s1"> </span><span class="s3">(</span><span class="s1">window</span><span class="s3">.</span><span class="s1">innerWidth </span><span class="s3">&gt;=</span><span class="s1"> </span><span class="s5">768</span><span class="s3">)</span><span class="s1"> </span><span class="s8">return</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>currentSlide </span><span class="s3">=</span><span class="s1"> </span><span class="s3">(</span><span class="s1">currentSlide </span><span class="s3">+</span><span class="s1"> </span><span class="s5">1</span><span class="s3">)</span><span class="s1"> </span><span class="s3">%</span><span class="s1"> totalSlides</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>updateCarousel</span><span class="s3">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">}</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">// --- 舊圖像、字卡的 onerror Fallback 機制 ---</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">const</span><span class="s1"> allImages </span><span class="s3">=</span><span class="s1"> document</span><span class="s3">.</span><span class="s1">querySelectorAll</span><span class="s3">(</span><span class="s6">'img'</span><span class="s3">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>allImages</span><span class="s3">.</span><span class="s1">forEach</span><span class="s3">(</span><span class="s1">img </span><span class="s3">=&gt;</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>img</span><span class="s3">.</span><span class="s1">addEventListener</span><span class="s3">(</span><span class="s6">'error'</span><span class="s3">,</span><span class="s1"> </span><span class="s8">function</span><span class="s3">()</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">if</span><span class="s1"> </span><span class="s3">(</span><span class="s8">this</span><span class="s3">.</span><span class="s1">alt </span><span class="s3">===</span><span class="s1"> </span><span class="s6">"注音海報"</span><span class="s3">)</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span></span><span class="s8">this</span><span class="s3">.</span><span class="s2">src </span><span class="s3">=</span><span class="s2"> </span><span class="s1">'https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?auto=format&amp;fit=crop&amp;w=300&amp;q=80'</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">});</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">});</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">function</span><span class="s1"> prevSlide</span><span class="s3">()</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s8">if</span><span class="s1"> </span><span class="s3">(</span><span class="s1">window</span><span class="s3">.</span><span class="s1">innerWidth </span><span class="s3">&gt;=</span><span class="s1"> </span><span class="s5">768</span><span class="s3">)</span><span class="s1"> </span><span class="s8">return</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>currentSlide </span><span class="s3">=</span><span class="s1"> </span><span class="s3">(</span><span class="s1">currentSlide </span><span class="s3">-</span><span class="s1"> </span><span class="s5">1</span><span class="s1"> </span><span class="s3">+</span><span class="s1"> totalSlides</span><span class="s3">)</span><span class="s1"> </span><span class="s3">%</span><span class="s1"> totalSlides</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>updateCarousel</span><span class="s3">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">}</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">function</span><span class="s1"> goToSlide</span><span class="s3">(</span><span class="s1">index</span><span class="s3">)</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s8">if</span><span class="s1"> </span><span class="s3">(</span><span class="s1">window</span><span class="s3">.</span><span class="s1">innerWidth </span><span class="s3">&gt;=</span><span class="s1"> </span><span class="s5">768</span><span class="s3">)</span><span class="s1"> </span><span class="s8">return</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>currentSlide </span><span class="s3">=</span><span class="s1"> index</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>updateCarousel</span><span class="s3">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">}</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">// --- 手勢觸控滑動支援 (針對發燒網/嵌入框架深度優化) ---</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">let</span><span class="s1"> startX </span><span class="s3">=</span><span class="s1"> </span><span class="s5">0</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">let</span><span class="s1"> startY </span><span class="s3">=</span><span class="s1"> </span><span class="s5">0</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">let</span><span class="s1"> isDragging </span><span class="s3">=</span><span class="s1"> </span><span class="s8">false</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">const</span><span class="s1"> track </span><span class="s3">=</span><span class="s1"> document</span><span class="s3">.</span><span class="s1">getElementById</span><span class="s3">(</span><span class="s6">'carousel-track'</span><span class="s3">);</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>track</span><span class="s3">.</span><span class="s1">addEventListener</span><span class="s3">(</span><span class="s6">'touchstart'</span><span class="s3">,</span><span class="s1"> </span><span class="s3">(</span><span class="s1">e</span><span class="s3">)</span><span class="s1"> </span><span class="s3">=&gt;</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s8">if</span><span class="s1"> </span><span class="s3">(</span><span class="s1">window</span><span class="s3">.</span><span class="s1">innerWidth </span><span class="s3">&gt;=</span><span class="s1"> </span><span class="s5">768</span><span class="s3">)</span><span class="s1"> </span><span class="s8">return</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>startX </span><span class="s3">=</span><span class="s1"> e</span><span class="s3">.</span><span class="s1">touches</span><span class="s3">[</span><span class="s5">0</span><span class="s3">].</span><span class="s1">clientX</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>startY </span><span class="s3">=</span><span class="s1"> e</span><span class="s3">.</span><span class="s1">touches</span><span class="s3">[</span><span class="s5">0</span><span class="s3">].</span><span class="s1">clientY</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>isDragging </span><span class="s3">=</span><span class="s1"> </span><span class="s8">true</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">},</span><span class="s1"> </span><span class="s3">{</span><span class="s1"> passive</span><span class="s3">:</span><span class="s1"> </span><span class="s8">true</span><span class="s1"> </span><span class="s3">});</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>track</span><span class="s3">.</span><span class="s1">addEventListener</span><span class="s3">(</span><span class="s6">'touchend'</span><span class="s3">,</span><span class="s1"> </span><span class="s3">(</span><span class="s1">e</span><span class="s3">)</span><span class="s1"> </span><span class="s3">=&gt;</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s8">if</span><span class="s1"> </span><span class="s3">(!</span><span class="s1">isDragging </span><span class="s3">||</span><span class="s1"> window</span><span class="s3">.</span><span class="s1">innerWidth </span><span class="s3">&gt;=</span><span class="s1"> </span><span class="s5">768</span><span class="s3">)</span><span class="s1"> </span><span class="s8">return</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s8">const</span><span class="s1"> endX </span><span class="s3">=</span><span class="s1"> e</span><span class="s3">.</span><span class="s1">changedTouches</span><span class="s3">[</span><span class="s5">0</span><span class="s3">].</span><span class="s1">clientX</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s8">const</span><span class="s1"> endY </span><span class="s3">=</span><span class="s1"> e</span><span class="s3">.</span><span class="s1">changedTouches</span><span class="s3">[</span><span class="s5">0</span><span class="s3">].</span><span class="s1">clientY</span><span class="s3">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s8">const</span><span class="s1"> diffX </span><span class="s3">=</span><span class="s1"> startX </span><span class="s3">-</span><span class="s1"> endX</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s8">const</span><span class="s1"> diffY </span><span class="s3">=</span><span class="s1"> startY </span><span class="s3">-</span><span class="s1"> endY</span><span class="s3">;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">// 關鍵優化：只有當「左右滑動距離大於上下滑動距離」時，才執行輪播換頁</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s8">if</span><span class="s1"> </span><span class="s3">(</span><span class="s4">Math</span><span class="s3">.</span><span class="s1">abs</span><span class="s3">(</span><span class="s1">diffX</span><span class="s3">)</span><span class="s1"> </span><span class="s3">&gt;</span><span class="s1"> </span><span class="s4">Math</span><span class="s3">.</span><span class="s1">abs</span><span class="s3">(</span><span class="s1">diffY</span><span class="s3">))</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">if</span><span class="s1"> </span><span class="s3">(</span><span class="s1">diffX </span><span class="s3">&gt;</span><span class="s1"> </span><span class="s5">50</span><span class="s3">)</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">          </span>nextSlide</span><span class="s3">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">}</span><span class="s1"> </span><span class="s8">else</span><span class="s1"> </span><span class="s8">if</span><span class="s1"> </span><span class="s3">(</span><span class="s1">diffX </span><span class="s3">&lt;</span><span class="s1"> </span><span class="s3">-</span><span class="s5">50</span><span class="s3">)</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">          </span>prevSlide</span><span class="s3">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>isDragging </span><span class="s3">=</span><span class="s1"> </span><span class="s8">false</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">},</span><span class="s1"> </span><span class="s3">{</span><span class="s1"> passive</span><span class="s3">:</span><span class="s1"> </span><span class="s8">true</span><span class="s1"> </span><span class="s3">});</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">// --- 一鍵複製折價券腳本 ---</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">function</span><span class="s1"> copyCouponCode</span><span class="s3">(</span><span class="s1">code</span><span class="s3">)</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s8">const</span><span class="s1"> tempTextArea </span><span class="s3">=</span><span class="s1"> document</span><span class="s3">.</span><span class="s1">createElement</span><span class="s3">(</span><span class="s6">'textarea'</span><span class="s3">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>tempTextArea</span><span class="s3">.</span><span class="s1">value </span><span class="s3">=</span><span class="s1"> code</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>tempTextArea</span><span class="s3">.</span><span class="s1">style</span><span class="s3">.</span><span class="s1">position </span><span class="s3">=</span><span class="s1"> </span><span class="s6">'fixed'</span><span class="s3">;</span><span class="s1"><span class="Apple-converted-space"> </span></span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>tempTextArea</span><span class="s3">.</span><span class="s1">style</span><span class="s3">.</span><span class="s1">opacity </span><span class="s3">=</span><span class="s1"> </span><span class="s6">'0'</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>document</span><span class="s3">.</span><span class="s1">body</span><span class="s3">.</span><span class="s1">appendChild</span><span class="s3">(</span><span class="s1">tempTextArea</span><span class="s3">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>tempTextArea</span><span class="s3">.</span><span class="s1">select</span><span class="s3">();</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s8">try</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">const</span><span class="s1"> successful </span><span class="s3">=</span><span class="s1"> document</span><span class="s3">.</span><span class="s1">execCommand</span><span class="s3">(</span><span class="s6">'copy'</span><span class="s3">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">if</span><span class="s1"> </span><span class="s3">(</span><span class="s1">successful</span><span class="s3">)</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s8">const</span><span class="s1"> couponBtn </span><span class="s3">=</span><span class="s1"> document</span><span class="s3">.</span><span class="s1">getElementById</span><span class="s3">(</span><span class="s6">'coupon-btn'</span><span class="s3">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s8">const</span><span class="s1"> originalHTML </span><span class="s3">=</span><span class="s1"> couponBtn</span><span class="s3">.</span><span class="s1">innerHTML</span><span class="s3">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">          </span></span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>couponBtn</span><span class="s3">.</span><span class="s2">innerHTML </span><span class="s3">=</span><span class="s2"> </span><span class="s1">`&lt;i class="fa-solid fa-circle-check text-emerald-400 mr-1"&gt;&lt;/i&gt; 已複製代碼！`</span><span class="s3">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>couponBtn</span><span class="s3">.</span><span class="s2">className </span><span class="s3">=</span><span class="s2"> </span><span class="s1">"inline-flex items-center justify-center text-xs sm:text-sm text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 font-bold tracking-wide px-3.5 py-2 rounded-full shadow-sm transition-all w-fit mx-auto sm:mx-0"</span><span class="s3">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">          </span></span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">          </span>setTimeout</span><span class="s3">(()</span><span class="s1"> </span><span class="s3">=&gt;</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>couponBtn</span><span class="s3">.</span><span class="s1">innerHTML </span><span class="s3">=</span><span class="s1"> originalHTML</span><span class="s3">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>couponBtn</span><span class="s3">.</span><span class="s2">className </span><span class="s3">=</span><span class="s2"> </span><span class="s1">"cursor-pointer group flex items-center justify-center gap-1.5 bg-white/10 border border-white/20 hover:bg-white/15 px-3.5 py-2 rounded-full text-xs sm:text-sm text-white font-bold active:scale-95 transition-all w-fit mx-auto sm:mx-0 shrink-0"</span><span class="s3">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s3">},</span><span class="s1"> </span><span class="s5">2000</span><span class="s3">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">}</span><span class="s1"> </span><span class="s8">catch</span><span class="s1"> </span><span class="s3">(</span><span class="s1">err</span><span class="s3">)</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>console</span><span class="s3">.</span><span class="s1">error</span><span class="s3">(</span><span class="s6">'複製失敗: '</span><span class="s3">,</span><span class="s1"> err</span><span class="s3">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">}</span><span class="s1"> </span><span class="s8">finally</span><span class="s1"> </span><span class="s3">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>document</span><span class="s3">.</span><span class="s1">body</span><span class="s3">.</span><span class="s1">removeChild</span><span class="s3">(</span><span class="s1">tempTextArea</span><span class="s3">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">}</span></p>
-<p class="p1"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p1"><span class="s3">&lt;/</span><span class="s1">body</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s3">&lt;/</span><span class="s1">html</span><span class="s3">&gt;</span></p>
+<body class="py-6 px-3 sm:px-6">
+
+  <section class="max-w-5xl mx-auto relative">
+
+    <!-- 大禮包一體化卡片 (加入 shine 光束動效) -->
+    <div class="mega-course-card z-10 shine">
+      <div class="p-4 sm:p-8 space-y-6">
+        
+        <!-- 主副標題區 (完全一致的禮物盒與講師標題排版) -->
+        <div class="flex flex-col items-center w-full mb-6 sm:mb-8 text-center">
+          
+          <!-- 禮物盒與標題在同一行 -->
+          <div class="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-3">
+            <!-- 禮物盒圖示 -->
+            <div class="bg-yellow-400 w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl border-b-4 border-yellow-600 shrink-0">
+              <i class="fa-solid fa-gift text-purple-900 text-lg sm:text-xl"></i>
+            </div>
+            <!-- 標題 -->
+            <h3 class="text-base sm:text-lg font-black text-white tracking-tight">還有！超值合購優惠</h3>
+          </div>
+
+          <!-- 核心主打標題 -->
+          <h4 class="text-3xl sm:text-4xl font-black text-white mt-2 tracking-tight">
+            注音趴 ＋ 拼音趴 <span class="bg-gradient-to-r from-yellow-300 to-amber-400 bg-clip-text text-transparent ml-1 sm:ml-2">雙課大禮包</span>
+          </h4>
+
+        </div>
+
+        <!-- 課程亮點展示區 (電腦版不輪播、改並排) -->
+        <div class="relative pb-1 mb-2 sm:mb-4">
+          
+          <!-- 輪播與並排主容器 (在移動端加入 touch-pan-y 確保不干擾 Y 軸上下捲動) -->
+          <div class="overflow-hidden md:overflow-visible rounded-2xl touch-pan-y">
+            <div id="carousel-track" class="flex transition-transform duration-500 ease-out md:!transform-none touch-pan-y" style="transform: translateX(0%);">
+              
+              <!-- 幻燈片 1：兒童注音趴 (改為精緻白底高質感卡片) -->
+              <div class="w-full md:w-1/2 shrink-0 md:shrink px-2 relative">
+                <div class="bg-white rounded-3xl p-4 sm:p-5 border border-amber-200/60 flex flex-col gap-4 justify-between h-full relative overflow-hidden shadow-md">
+                  
+                  <!-- 圖片區 -->
+                  <div class="w-full relative">
+                    <div class="relative rounded-2xl overflow-hidden aspect-[16/9] bg-slate-50 border border-slate-100 shadow-sm">
+                      <img src="https://image.fevercdn.com?bucket=picture-original.fevercdn.com&filepath=parenting%2F5%2F2103%2Ffbb7121133203da17d96ec12.png" alt="注音趴課程" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                  </div>
+
+                  <!-- 底部內容區 (雙欄對齊排版) -->
+                  <div class="flex items-center justify-between gap-4 mt-2">
+                    <!-- 左欄：亮點文字清單 -->
+                    <div class="flex-1">
+                      <ul class="space-y-2 text-slate-800 text-sm sm:text-base md:text-lg">
+                        <li class="flex items-center gap-1.5">
+                          <span class="text-amber-500 shrink-0"><i class="fa-solid fa-circle-check"></i></span>
+                          <span><strong>獨家圖像聯想</strong></span>
+                        </li>
+                        <li class="flex items-center gap-1.5">
+                          <span class="text-amber-500 shrink-0"><i class="fa-solid fa-circle-check"></i></span>
+                          <span><strong>簡單注音唸謠</strong></span>
+                        </li>
+                        <li class="flex items-center gap-1.5">
+                          <span class="text-amber-500 shrink-0"><i class="fa-solid fa-circle-check"></i></span>
+                          <span><strong>趣味發音練習</strong></span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <!-- 右欄：直角矩形海報框 -->
+                    <div class="relative shrink-0 mr-2 sm:mr-4">
+                      <div class="w-24 h-32 sm:w-28 sm:h-38 rounded-xl overflow-hidden border-4 border-white shadow-xl bg-white shrink-0">
+                        <img src="https://image.fevercdn.com?bucket=picture-original.fevercdn.com&filepath=parenting%2F5%2F2103%2F44a14f87c1f707e14a8b648c.png" alt="注音海報" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?auto=format&fit=crop&w=300&q=80'">
+                      </div>
+                      <!-- 右上角膠囊標籤 -->
+                      <div class="absolute -top-1.5 -right-2 sm:-top-2 sm:-right-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-black text-[11px] sm:text-sm px-2.5 py-1 rounded-full shadow-md whitespace-nowrap border-2 border-white tracking-wide">
+                        \ 附注音海報 /
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- 幻燈片 2：兒童拼音趴 (改為精緻白底高質感卡片) -->
+              <div class="w-full md:w-1/2 shrink-0 md:shrink px-2 relative">
+                <div class="bg-white rounded-3xl p-4 sm:p-5 border border-purple-200/60 flex flex-col gap-4 justify-between h-full relative overflow-hidden shadow-md">
+                  
+                  <!-- 圖片區 -->
+                  <div class="w-full relative">
+                    <div class="relative rounded-2xl overflow-hidden aspect-[16/9] bg-slate-50 border border-slate-100 shadow-sm">
+                      <img src="https://image.fevercdn.com?bucket=picture-original.fevercdn.com&filepath=parenting%2F5%2F2103%2F8a83beff83b6bf77df8bbe1f.png" alt="拼音趴課程" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                  </div>
+
+                  <!-- 底部內容區 (雙欄對齊排版) -->
+                  <div class="flex items-center justify-between gap-4 mt-2">
+                    <!-- 左欄：亮點文字清單 -->
+                    <div class="flex-1">
+                      <ul class="space-y-2 text-slate-800 text-sm sm:text-base md:text-lg">
+                        <li class="flex items-center gap-1.5">
+                          <span class="text-purple-600 shrink-0"><i class="fa-solid fa-circle-check"></i></span>
+                          <span><strong>有趣拼音故事</strong></span>
+                        </li>
+                        <li class="flex items-center gap-1.5">
+                          <span class="text-purple-600 shrink-0"><i class="fa-solid fa-circle-check"></i></span>
+                          <span><strong>進階拼音唸謠</strong></span>
+                        </li>
+                        <li class="flex items-center gap-1.5">
+                          <span class="text-purple-600 shrink-0"><i class="fa-solid fa-circle-check"></i></span>
+                          <span><strong>告別易混淆注音</strong></span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <!-- 右欄：直角矩形字卡框 -->
+                    <div class="relative shrink-0 mr-2 sm:mr-4">
+                      <div class="w-24 h-32 sm:w-28 sm:h-38 rounded-xl overflow-hidden border-4 border-white shadow-lg bg-white shrink-0">
+                        <img src="https://image.fevercdn.com?bucket=picture-original.fevercdn.com&filepath=parenting%2F5%2F2103%2F1c0a4376047c3360755fcc01.png" alt="拼音字卡" class="w-full h-full object-cover" style="object-position: 95% center;" onerror="this.src='https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=300&q=80'">
+                      </div>
+                      <!-- 右上角膠囊標籤 -->
+                      <div class="absolute -top-1.5 -right-2 sm:-top-2 sm:-right-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-black text-[11px] sm:text-sm px-2.5 py-1 rounded-full shadow-md whitespace-nowrap border-2 border-white tracking-wide">
+                        \ 附拼音字卡 /
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 輪播左右操控箭頭 (md:hidden 在電腦版隱藏) -->
+          <button onclick="prevSlide()" class="absolute left-2 top-[40%] md:top-1/2 -translate-y-1/2 bg-white/95 text-slate-800 hover:text-purple-600 w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center shadow-sm hover:shadow-md transition-all z-20 focus:outline-none border border-slate-100 md:hidden" aria-label="上一個課程">
+            <i class="fa-solid fa-chevron-left text-xs"></i>
+          </button>
+          <button onclick="nextSlide()" class="absolute right-2 top-[40%] md:top-1/2 -translate-y-1/2 bg-white/95 text-slate-800 hover:text-purple-600 w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center shadow-sm hover:shadow-md transition-all z-20 focus:outline-none border border-slate-100 md:hidden" aria-label="下一個課程">
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+          </button>
+
+          <!-- 輪播指示點點 (md:hidden 在電腦版隱藏) -->
+          <div class="flex md:hidden justify-center gap-2 mt-3">
+            <button onclick="goToSlide(0)" id="dot-0" class="w-1.5 h-1.5 rounded-full transition-all duration-300 bg-yellow-400 scale-110" aria-label="查看注音趴"></button>
+            <button onclick="goToSlide(1)" id="dot-1" class="w-1.5 h-1.5 rounded-full transition-all duration-300 bg-white/30 hover:bg-white/50" aria-label="查看拼音趴"></button>
+          </div>
+
+        </div>
+
+        <!-- 結帳促銷區 (改為半透明磨砂質感，搭配主色配色) -->
+        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-white/20 shadow-md">
+          <div class="space-y-4">
+            
+            <!-- 上排：價格與折扣碼一鍵複製 -->
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-white/10 pb-3">
+              <!-- 左側價格 -->
+              <div class="text-center sm:text-left">
+                <span class="text-white/60 line-through text-xs block">原價 $7,600</span>
+                <div class="text-yellow-400 font-black text-2xl sm:text-3xl tracking-tight mt-0.5 whitespace-nowrap">
+                  NT$ <span class="text-3xl sm:text-4xl text-yellow-300">5,490</span>
+                </div>
+              </div>
+              
+              <!-- 右側折扣碼複製 (改為與對照組一致的半透明毛玻璃邊框與高亮代碼) -->
+              <div id="coupon-btn" onclick="copyCouponCode('GPM300')" class="cursor-pointer group flex items-center justify-center gap-1.5 bg-white/10 border border-white/20 hover:bg-white/15 px-3.5 py-2 rounded-full text-xs sm:text-sm text-white font-bold active:scale-95 transition-all w-fit mx-auto sm:mx-0 shrink-0" title="點擊一鍵複製代碼">
+                <i class="fa-solid fa-ticket text-yellow-400 mr-1 animate-pulse"></i> 
+                <span>輸入代碼 <span class="bg-yellow-400 text-purple-950 px-2 py-0.5 rounded mx-0.5 font-mono text-xs font-black">GPM300</span> 再折 300</span>
+                <span class="text-white/20">|</span>
+                <span class="text-yellow-400 flex items-center gap-0.5 shrink-0">
+                  <i class="fa-regular fa-copy"></i>複製
+                </span>
+              </div>
+            </div>
+            
+            <!-- 下排：領取限時優惠按鈕 (加入 pulse-btn 微呼吸效果與金黃漸層) -->
+            <a href="https://learning.parenting.com.tw/plans/467de1dc-cefd-4a7c-a852-ee32c81e91a2?utm_source=SiteTopic.website&utm_medium=referral&utm_campaign=cp_r_2606bopomofo_course_bundle_lp02_20260616" target="_blank" rel="noopener noreferrer" class="btn-action pulse-btn w-full py-3.5 px-5 rounded-2xl font-black text-base sm:text-xl transition-all duration-300 text-center block">
+              <span class="whitespace-nowrap">搶先領取限時優惠 ➔</span>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 貼心一鍵複製代碼與輪播手勢腳本 -->
+  <script>
+    // --- 輪播邏輯機制 (僅在非 md 電腦版寬度下生效) ---
+    let currentSlide = 0;
+    const totalSlides = 2;
+
+    function updateCarousel() {
+      // 如果視窗寬度大於等於 768px (md)，不執行輪播位移
+      if (window.innerWidth >= 768) {
+        document.getElementById('carousel-track').style.transform = 'none';
+        return;
+      }
+
+      const track = document.getElementById('carousel-track');
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      
+      // 更新圓點樣式
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.getElementById(`dot-${i}`);
+        if (dot) {
+          if (i === currentSlide) {
+            dot.classList.remove('bg-white/30', 'hover:bg-white/50');
+            dot.classList.add('bg-yellow-400', 'scale-110');
+          } else {
+            dot.classList.remove('bg-yellow-400', 'scale-110');
+            dot.classList.add('bg-white/30', 'hover:bg-white/50');
+          }
+        }
+      }
+    }
+
+    // 監聽視窗縮放，確保在桌機/手機切換時顯示正常
+    window.addEventListener('resize', updateCarousel);
+
+    function nextSlide() {
+      if (window.innerWidth >= 768) return;
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    // --- 舊圖像、字卡的 onerror Fallback 機制 ---
+    const allImages = document.querySelectorAll('img');
+    allImages.forEach(img => {
+      img.addEventListener('error', function() {
+        if (this.alt === "注音海報") {
+          this.src = 'https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?auto=format&fit=crop&w=300&q=80';
+        }
+      });
+    });
+
+    function prevSlide() {
+      if (window.innerWidth >= 768) return;
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      if (window.innerWidth >= 768) return;
+      currentSlide = index;
+      updateCarousel();
+    }
+
+    // --- 手勢觸控滑動支援 (針對發燒網/嵌入框架深度優化) ---
+    let startX = 0;
+    let startY = 0;
+    let isDragging = false;
+    const track = document.getElementById('carousel-track');
+
+    track.addEventListener('touchstart', (e) => {
+      if (window.innerWidth >= 768) return;
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      isDragging = true;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+      if (!isDragging || window.innerWidth >= 768) return;
+      const endX = e.changedTouches[0].clientX;
+      const endY = e.changedTouches[0].clientY;
+      
+      const diffX = startX - endX;
+      const diffY = startY - endY;
+
+      // 關鍵優化：只有當「左右滑動距離大於上下滑動距離」時，才執行輪播換頁
+      if (Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX > 50) {
+          nextSlide();
+        } else if (diffX < -50) {
+          prevSlide();
+        }
+      }
+      isDragging = false;
+    }, { passive: true });
+
+    // --- 一鍵複製折價券腳本 ---
+    function copyCouponCode(code) {
+      const tempTextArea = document.createElement('textarea');
+      tempTextArea.value = code;
+      tempTextArea.style.position = 'fixed'; 
+      tempTextArea.style.opacity = '0';
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      
+      try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+          const couponBtn = document.getElementById('coupon-btn');
+          const originalHTML = couponBtn.innerHTML;
+          
+          couponBtn.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400 mr-1"></i> 已複製代碼！`;
+          couponBtn.className = "inline-flex items-center justify-center text-xs sm:text-sm text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 font-bold tracking-wide px-3.5 py-2 rounded-full shadow-sm transition-all w-fit mx-auto sm:mx-0";
+          
+          setTimeout(() => {
+            couponBtn.innerHTML = originalHTML;
+            couponBtn.className = "cursor-pointer group flex items-center justify-center gap-1.5 bg-white/10 border border-white/20 hover:bg-white/15 px-3.5 py-2 rounded-full text-xs sm:text-sm text-white font-bold active:scale-95 transition-all w-fit mx-auto sm:mx-0 shrink-0";
+          }, 2000);
+        }
+      } catch (err) {
+        console.error('複製失敗: ', err);
+      } finally {
+        document.body.removeChild(tempTextArea);
+      }
+    }
+  </script>
+
 </body>
 </html>
