@@ -11,11 +11,13 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
-    body {
+    /* 強制將 html 與 body 的滾動條隱藏，並將 padding 移至 section 處理 */
+    html, body {
       font-family: 'Noto Sans TC', sans-serif;
       background-color: transparent; 
       margin: 0;
-      overflow-x: hidden;
+      padding: 0;
+      overflow: hidden; /* 徹底隱藏並禁用此頁面的滾動條 */
       -webkit-font-smoothing: antialiased;
     }
 
@@ -87,9 +89,10 @@
     }
   </style>
 </head>
-<body class="py-6 px-3 sm:px-6">
+<body>
 
-  <section class="max-w-4xl mx-auto flex flex-col gap-6 relative">
+  <!-- 將原本在 body 的 py-6 px-3 sm:px-6 移動至此處，防止外層 iframe 誤判高度 -->
+  <section class="max-w-4xl mx-auto flex flex-col gap-6 relative py-6 px-3 sm:px-6">
 
     <!-- 頂部溫暖引言 (帶有同理心的家長痛點引導) -->
     <div class="w-full text-center leading-relaxed px-4 py-2">
