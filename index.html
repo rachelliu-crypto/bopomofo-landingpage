@@ -11,7 +11,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
-    /* 核心優化：允許滾動，但徹底隱藏滾動條（滑桿） */
+    /* 核心優化：允許滾動，但徹底隱藏滾動條（滑桿），並確保不晃動 */
     html, body {
       font-family: 'Noto Sans TC', sans-serif;
       background-color: transparent; 
@@ -97,6 +97,47 @@
       transform: scale(1.03);
       box-shadow: 0 15px 25px -5px rgba(251, 191, 36, 0.6);
     }
+
+    /* ==================== 參考語法的極致防滑桿輪播結構 ==================== */
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding-bottom: 4px;
+      margin-bottom: -4px;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      width: 100%;
+    }
+
+    .carousel-slide {
+      width: 100%;
+      flex-shrink: 0;
+      padding: 4px;
+    }
+
+    /* 手機版輪播特定結構：僅在 md (768px) 以下生效，避免裁切與滑動溢出 */
+    @media (max-width: 767px) {
+      .mobile-carousel-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding-bottom: 4px;
+      }
+      .mobile-carousel-track {
+        display: flex;
+        transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        width: 100%;
+      }
+      .mobile-carousel-slide {
+        width: 100%;
+        flex-shrink: 0;
+        padding: 4px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -104,7 +145,7 @@
   <!-- 將原本在 body 的 py-6 px-3 sm:px-6 移動至此處，防止外層 iframe 誤判高度 -->
   <section class="max-w-4xl mx-auto flex flex-col gap-6 relative py-6 px-3 sm:px-6">
 
-    <!-- 頂部溫慢引言 (帶有同理心的家長痛點引導) -->
+    <!-- 頂部溫慢引言 -->
     <div class="w-full text-center leading-relaxed px-4 py-2">
       <p class="text-gray-800 text-[16px] sm:text-[18px] font-medium max-w-xl mx-auto">
         小一開學後的短短十週內，孩子就要認識完所有注音符號、學會拼音。<br class="hidden sm:inline">你是不是也開始擔心孩子「會不會跟不上？」
@@ -145,7 +186,7 @@
         <!-- 主副標題區 (沿用您原本無動態的禮物盒與 3D 立體底框樣式) -->
         <div class="space-y-3 text-center mb-6 sm:mb-8">
           <!-- 禮物盒圖示與文字 -->
-          <div class="inline-flex items-center gap-3 sm:gap-4 mb-1">
+          <div class="inline-flex items-center justify-center gap-3 sm:gap-4 mb-1">
             <!-- 禮物盒圖示 -->
             <div class="bg-yellow-400 w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl border-b-4 border-yellow-600 shrink-0">
               <i class="fa-solid fa-gift text-purple-900 text-lg sm:text-xl"></i>
@@ -159,15 +200,15 @@
           </h4>
         </div>
 
-        <!-- 課程亮點展示區 (電腦版不輪播、改並排) -->
+        <!-- ==================== 課程亮點展示區 (改為參考語法的防切防溢出純 CSS 動態軌道) ==================== -->
         <div class="relative pb-1 mb-2 sm:mb-4">
           
-          <!-- 輪播與並排主容器 (在移動端加入 touch-pan-y 確保不干擾 Y 軸上下捲動) -->
-          <div class="overflow-hidden md:overflow-visible rounded-2xl touch-pan-y">
-            <div id="carousel-track" class="flex transition-transform duration-500 ease-out md:!transform-none touch-pan-y" style="transform: translateX(0%);">
+          <!-- 手機版防切容器，在桌機(md)上寬度正常無輪播 -->
+          <div class="mobile-carousel-container w-full overflow-hidden md:overflow-visible touch-pan-y">
+            <div id="carousel-track" class="mobile-carousel-track md:grid md:grid-cols-2 md:gap-4 md:translate-x-0 touch-pan-y" style="transform: translateX(0%);">
               
-              <!-- 幻燈片 1：兒童注音趴 -->
-              <div class="w-full md:w-1/2 shrink-0 md:shrink px-2 relative">
+              <!-- 課程卡片 1：兒童注音趴 -->
+              <div class="mobile-carousel-slide w-full md:w-auto flex-shrink-0 md:flex-shrink px-2">
                 <div class="bg-white rounded-3xl p-4 sm:p-5 border border-amber-200/60 flex flex-col gap-4 justify-between h-full relative overflow-hidden shadow-md">
                   
                   <!-- 圖片區 -->
@@ -177,7 +218,7 @@
                     </div>
                   </div>
 
-                  <!-- 底部內容區 (雙欄對齊排版) -->
+                  <!-- 底部內容區 -->
                   <div class="flex items-center justify-between gap-4 mt-2">
                     <!-- 左欄：亮點文字清單 -->
                     <div class="flex-1">
@@ -197,7 +238,7 @@
                       </ul>
                     </div>
 
-                    <!-- 右欄：直角矩形海報框 -->
+                    <!-- 右欄：海報框 -->
                     <div class="relative shrink-0 mr-2 sm:mr-4">
                       <div class="w-24 h-32 sm:w-28 sm:h-38 rounded-xl overflow-hidden border-4 border-white shadow-xl bg-white shrink-0">
                         <img src="https://image.fevercdn.com?bucket=picture-original.fevercdn.com&filepath=parenting%2F5%2F2103%2F44a14f87c1f707e14a8b648c.png" alt="注音海報" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?auto=format&fit=crop&w=300&q=80'">
@@ -212,8 +253,8 @@
                 </div>
               </div>
 
-              <!-- 幻燈片 2：兒童拼音趴 -->
-              <div class="w-full md:w-1/2 shrink-0 md:shrink px-2 relative">
+              <!-- 課程卡片 2：兒童拼音趴 -->
+              <div class="mobile-carousel-slide w-full md:w-auto flex-shrink-0 md:flex-shrink px-2">
                 <div class="bg-white rounded-3xl p-4 sm:p-5 border border-purple-200/60 flex flex-col gap-4 justify-between h-full relative overflow-hidden shadow-md">
                   
                   <!-- 圖片區 -->
@@ -223,7 +264,7 @@
                     </div>
                   </div>
 
-                  <!-- 底部內容區 (雙欄對齊排版) -->
+                  <!-- 底部內容區 -->
                   <div class="flex items-center justify-between gap-4 mt-2">
                     <!-- 左欄：亮點文字清單 -->
                     <div class="flex-1">
@@ -243,7 +284,7 @@
                       </ul>
                     </div>
 
-                    <!-- 右欄：直角矩形字卡框 -->
+                    <!-- 右欄：字卡框 -->
                     <div class="relative shrink-0 mr-2 sm:mr-4">
                       <div class="w-24 h-32 sm:w-28 sm:h-38 rounded-xl overflow-hidden border-4 border-white shadow-lg bg-white shrink-0">
                         <img src="https://image.fevercdn.com?bucket=picture-original.fevercdn.com&filepath=parenting%2F5%2F2103%2F1c0a4376047c3360755fcc01.png" alt="拼音字卡" class="w-full h-full object-cover" style="object-position: 95% center;" onerror="this.src='https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=300&q=80'">
@@ -261,23 +302,25 @@
             </div>
           </div>
 
-          <!-- 輪播左右操控箭頭 (md:hidden 在電腦版隱藏) -->
-          <button onclick="prevSlide()" class="absolute left-2 top-[40%] md:top-1/2 -translate-y-1/2 bg-white/95 text-slate-800 hover:text-purple-600 w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center shadow-sm hover:shadow-md transition-all z-20 focus:outline-none border border-slate-100 md:hidden" aria-label="上一個課程">
-            <i class="fa-solid fa-chevron-left text-xs"></i>
-          </button>
-          <button onclick="nextSlide()" class="absolute right-2 top-[40%] md:top-1/2 -translate-y-1/2 bg-white/95 text-slate-800 hover:text-purple-600 w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center shadow-sm hover:shadow-md transition-all z-20 focus:outline-none border border-slate-100 md:hidden" aria-label="下一個課程">
-            <i class="fa-solid fa-chevron-right text-xs"></i>
-          </button>
-
-          <!-- 輪播指示點點 (md:hidden 在電腦版隱藏) -->
-          <div class="flex md:hidden justify-center gap-2 mt-3">
-            <button onclick="goToSlide(0)" id="dot-0" class="w-1.5 h-1.5 rounded-full transition-all duration-300 bg-yellow-400 scale-110" aria-label="查看注音趴"></button>
-            <button onclick="goToSlide(1)" id="dot-1" class="w-1.5 h-1.5 rounded-full transition-all duration-300 bg-white/30 hover:bg-white/50" aria-label="查看拼音趴"></button>
+          <!-- 輪播控制鈕：完全比照參考語法設計，只在手機版(md:hidden)顯示 -->
+          <div class="flex items-center justify-between mt-4 px-2 md:hidden relative z-20">
+            <button onclick="prevSlide()" class="w-6 h-6 rounded-full border border-white/40 flex items-center justify-center text-white hover:bg-white/10 transition-colors">
+              <i class="fa-solid fa-chevron-left text-[8px]"></i>
+            </button>
+            
+            <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-1.5" id="carouselDots">
+              <span onclick="goToSlide(0)" class="w-2 h-2 rounded-full cursor-pointer transition-all duration-300 bg-yellow-400"></span>
+              <span onclick="goToSlide(1)" class="w-2 h-2 rounded-full cursor-pointer transition-all duration-300 bg-white/30"></span>
+            </div>
+            
+            <button onclick="nextSlide()" class="w-6 h-6 rounded-full border border-white/40 flex items-center justify-center text-white hover:bg-white/10 transition-colors">
+              <i class="fa-solid fa-chevron-right text-[8px]"></i>
+            </button>
           </div>
 
         </div>
 
-        <!-- 結帳促銷區 (半透明磨砂質感) -->
+        <!-- 結帳促銷區 -->
         <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-white/20 shadow-md">
           <div class="space-y-4">
             
@@ -291,7 +334,7 @@
                 </div>
               </div>
               
-              <!-- 右側折扣碼複製 (半透明毛玻璃邊框與高亮代碼) -->
+              <!-- 右側折扣碼複製 -->
               <div id="coupon-btn" onclick="copyCouponCode('GPM300')" class="cursor-pointer group flex items-center justify-center gap-1.5 bg-white/10 border border-white/20 hover:bg-white/15 px-3.5 py-2 rounded-full text-xs sm:text-sm text-white font-bold active:scale-95 transition-all w-fit mx-auto sm:mx-0 shrink-0" title="點擊一鍵複製代碼">
                 <i class="fa-solid fa-ticket text-yellow-400 mr-1 animate-pulse"></i> 
                 <span>輸入代碼 <span class="bg-yellow-400 text-purple-950 px-2 py-0.5 rounded mx-0.5 font-mono text-xs font-black">GPM300</span> 再折 300</span>
@@ -317,12 +360,12 @@
 
   <!-- 貼心一鍵複製代碼與輪播手勢腳本 -->
   <script>
-    // --- 輪播邏輯機制 (僅在非 md 電腦版寬度下生效) ---
+    // --- 輪播一：雙課大禮包輪播控制機制 (僅在非 md 電腦版寬度下生效) ---
     let currentSlide = 0;
     const totalSlides = 2;
 
     function updateCarousel() {
-      // 如果視窗寬度大於等於 768px (md)，不執行輪播位移
+      // 如果視窗寬度大於等於 768px (md)，不執行輪播位移，強制重設回歸 grid 並排
       if (window.innerWidth >= 768) {
         document.getElementById('carousel-track').style.transform = 'none';
         return;
@@ -332,18 +375,16 @@
       track.style.transform = `translateX(-${currentSlide * 100}%)`;
       
       // 更新圓點樣式
-      for (let i = 0; i < totalSlides; i++) {
-        const dot = document.getElementById(`dot-${i}`);
-        if (dot) {
-          if (i === currentSlide) {
-            dot.classList.remove('bg-white/30', 'hover:bg-white/50');
-            dot.classList.add('bg-yellow-400', 'scale-110');
-          } else {
-            dot.classList.remove('bg-yellow-400', 'scale-110');
-            dot.classList.add('bg-white/30', 'hover:bg-white/50');
-          }
+      const dots = document.querySelectorAll('#carouselDots span');
+      dots.forEach((dot, index) => {
+        if (index === currentSlide) {
+          dot.classList.remove('bg-white/30');
+          dot.classList.add('bg-yellow-400', 'w-3');
+        } else {
+          dot.classList.remove('bg-yellow-400', 'w-3');
+          dot.classList.add('bg-white/30', 'w-2');
         }
-      }
+      });
     }
 
     // 監聽視窗縮放，確保在桌機/手機切換時顯示正常
@@ -354,16 +395,6 @@
       currentSlide = (currentSlide + 1) % totalSlides;
       updateCarousel();
     }
-
-    // --- 舊圖像、字卡的 onerror Fallback 機制 ---
-    const allImages = document.querySelectorAll('img');
-    allImages.forEach(img => {
-      img.addEventListener('error', function() {
-        if (this.alt === "注音海報") {
-          this.src = 'https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?auto=format&fit=crop&w=300&q=80';
-        }
-      });
-    });
 
     function prevSlide() {
       if (window.innerWidth >= 768) return;
@@ -377,7 +408,17 @@
       updateCarousel();
     }
 
-    // --- 手勢觸控滑動支援 (針對發燒網/嵌入框架深度優化) ---
+    // --- 舊圖像、字卡的 onerror Fallback 機制 ---
+    const allImages = document.querySelectorAll('img');
+    allImages.forEach(img => {
+      img.addEventListener('error', function() {
+        if (this.alt === "注音海報") {
+          this.src = 'https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?auto=format&fit=crop&w=300&q=80';
+        }
+      });
+    });
+
+    // --- 手勢觸控滑動支援 (與參考語法的流暢性與物理碰撞機制一致) ---
     let startX = 0;
     let startY = 0;
     let isDragging = false;
@@ -398,11 +439,11 @@
       const diffX = startX - endX;
       const diffY = startY - endY;
 
-      // 關鍵優化：只有當「左右滑動距離大於上下滑動距離」時，才執行輪播換頁
+      // 關鍵優化：只有當「左右滑動距離大於上下滑動距離」時，才執行輪播換頁，不干擾上下捲頁
       if (Math.abs(diffX) > Math.abs(diffY)) {
-        if (diffX > 50) {
+        if (diffX > 40) {
           nextSlide();
-        } else if (diffX < -50) {
+        } else if (diffX < -40) {
           prevSlide();
         }
       }
