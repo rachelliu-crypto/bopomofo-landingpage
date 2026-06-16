@@ -19,7 +19,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* 參考對照組：主卡片改為深紫漸層與厚白邊框樣式 */
+    /* 主卡片改為深紫漸層與厚白邊框樣式 */
     .mega-course-card {
       background: linear-gradient(to bottom right, #5b4a9a, #3a2e66); 
       border: 4px solid #ffffff; 
@@ -34,7 +34,7 @@
       box-shadow: 0 25px 50px -10px rgba(72, 58, 122, 0.7);
     }
 
-    /* 參考對照組：跑馬燈光束閃過效果 */
+    /* 跑馬燈光束閃過效果 */
     .shine::after {
       content: '';
       position: absolute;
@@ -59,7 +59,7 @@
       20%, 100% { left: 150%; }
     }
 
-    /* 參考對照組：呼吸按鈕動畫 - 增加點擊衝動 */
+    /* 呼吸按鈕動畫 - 增加點擊衝動 */
     @keyframes pulse-subtle {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.03); }
@@ -69,7 +69,7 @@
       animation: pulse-subtle 2s infinite ease-in-out;
     }
 
-    /* 漸層互動按鈕：改為亮黃色主題 */
+    /* 漸層互動按鈕 */
     .btn-action {
       background: linear-gradient(to bottom, #fbbf24, #f59e0b);
       color: #3a2e66;
@@ -89,17 +89,50 @@
 </head>
 <body class="py-6 px-3 sm:px-6">
 
-  <section class="max-w-5xl mx-auto relative">
+  <section class="max-w-4xl mx-auto flex flex-col gap-6 relative">
+
+    <!-- 頂部溫暖引言 (帶有同理心的家長痛點引導) -->
+    <div class="w-full text-center leading-relaxed px-4 py-2">
+      <p class="text-gray-800 text-[16px] sm:text-[18px] font-medium max-w-xl mx-auto">
+        小一開學後的短短十週內，孩子就要認識完所有注音符號、學會拼音。<br class="hidden sm:inline">你是不是也開始擔心孩子「會不會跟不上？」
+      </p>
+    </div>
+
+    <!-- 區塊一：別擔心！你可以從這裡獲得 (黃色主題，上下排列) -->
+    <div class="w-full bg-gradient-to-br from-[#fbbf24] to-[#f59e0b] rounded-[2.5rem] border-4 border-white shadow-[0_15px_30px_-5px_rgba(245,158,11,0.25)] p-5 sm:p-8 flex flex-col relative">
+      
+      <!-- 標題與圖示在同一行 -->
+      <div class="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-5 text-center">
+        <!-- 工具箱圖示 -->
+        <div class="bg-gray-800 w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-md border-b-2 border-gray-950 shrink-0">
+          <i class="fa-solid fa-toolbox text-yellow-400 text-lg sm:text-xl"></i>
+        </div>
+        <!-- 大標題 -->
+        <h3 class="text-base sm:text-lg font-black text-gray-900 tracking-tight">別擔心！你可以從這裡獲得</h3>
+      </div>
+
+      <!-- 攻略包好禮清單 -->
+      <div class="bg-white rounded-[1.75rem] border-2 border-white/50 shadow-[inset_0_2px_8px_rgba(0,0,0,0.05),0_4px_15px_-3px_rgba(0,0,0,0.05)] px-3 sm:px-6 py-5">
+        <p class="text-gray-950 font-black text-[16px] sm:text-[20px] tracking-wide flex flex-wrap items-center justify-center gap-y-2 gap-x-2.5 sm:gap-x-4">
+          <span class="flex items-center gap-1.5">🎮 拼音小遊戲</span>
+          <span class="text-gray-300 hidden xs:inline">|</span>
+          <span class="flex items-center gap-1.5">💡 學習技巧</span>
+          <span class="text-gray-300 hidden xs:inline">|</span>
+          <span class="flex items-center gap-1.5">🎁 免費資源</span>
+          <span class="text-gray-300 hidden xs:inline">|</span>
+          <span class="flex items-center gap-1.5">🎒 升小一禮包</span>
+        </p>
+      </div>
+    </div>
 
     <!-- 大禮包一體化卡片 (加入 shine 光束動效) -->
     <div class="mega-course-card z-10 shine">
       <div class="p-4 sm:p-8 space-y-6">
         
-        <!-- 主副標題區 (完全一致的禮物盒與講師標題排版) -->
-        <div class="flex flex-col items-center w-full mb-6 sm:mb-8 text-center">
-          
-          <!-- 禮物盒與標題在同一行 -->
-          <div class="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-3">
+        <!-- 主副標題區 (沿用您原本無動態的禮物盒與 3D 立體底框樣式) -->
+        <div class="space-y-3 text-center mb-6 sm:mb-8">
+          <!-- 禮物盒圖示與文字 -->
+          <div class="inline-flex items-center gap-3 sm:gap-4 mb-1">
             <!-- 禮物盒圖示 -->
             <div class="bg-yellow-400 w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl border-b-4 border-yellow-600 shrink-0">
               <i class="fa-solid fa-gift text-purple-900 text-lg sm:text-xl"></i>
@@ -107,12 +140,10 @@
             <!-- 標題 -->
             <h3 class="text-base sm:text-lg font-black text-white tracking-tight">還有！超值合購優惠</h3>
           </div>
-
-          <!-- 核心主打標題 -->
-          <h4 class="text-3xl sm:text-4xl font-black text-white mt-2 tracking-tight">
-            注音趴 ＋ 拼音趴 <span class="bg-gradient-to-r from-yellow-300 to-amber-400 bg-clip-text text-transparent ml-1 sm:ml-2">雙課大禮包</span>
+          <!-- 主標題 -->
+          <h4 class="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-wide leading-tight break-words">
+            <span class="inline">注音趴＋拼音趴</span><span class="inline bg-gradient-to-r from-yellow-300 to-amber-400 bg-clip-text text-transparent ml-1 sm:ml-2">雙課大禮包</span>
           </h4>
-
         </div>
 
         <!-- 課程亮點展示區 (電腦版不輪播、改並排) -->
@@ -122,7 +153,7 @@
           <div class="overflow-hidden md:overflow-visible rounded-2xl touch-pan-y">
             <div id="carousel-track" class="flex transition-transform duration-500 ease-out md:!transform-none touch-pan-y" style="transform: translateX(0%);">
               
-              <!-- 幻燈片 1：兒童注音趴 (改為精緻白底高質感卡片) -->
+              <!-- 幻燈片 1：兒童注音趴 -->
               <div class="w-full md:w-1/2 shrink-0 md:shrink px-2 relative">
                 <div class="bg-white rounded-3xl p-4 sm:p-5 border border-amber-200/60 flex flex-col gap-4 justify-between h-full relative overflow-hidden shadow-md">
                   
@@ -168,7 +199,7 @@
                 </div>
               </div>
 
-              <!-- 幻燈片 2：兒童拼音趴 (改為精緻白底高質感卡片) -->
+              <!-- 幻燈片 2：兒童拼音趴 -->
               <div class="w-full md:w-1/2 shrink-0 md:shrink px-2 relative">
                 <div class="bg-white rounded-3xl p-4 sm:p-5 border border-purple-200/60 flex flex-col gap-4 justify-between h-full relative overflow-hidden shadow-md">
                   
@@ -233,7 +264,7 @@
 
         </div>
 
-        <!-- 結帳促銷區 (改為半透明磨砂質感，搭配主色配色) -->
+        <!-- 結帳促銷區 (半透明磨砂質感) -->
         <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-white/20 shadow-md">
           <div class="space-y-4">
             
@@ -247,7 +278,7 @@
                 </div>
               </div>
               
-              <!-- 右側折扣碼複製 (改為與對照組一致的半透明毛玻璃邊框與高亮代碼) -->
+              <!-- 右側折扣碼複製 (半透明毛玻璃邊框與高亮代碼) -->
               <div id="coupon-btn" onclick="copyCouponCode('GPM300')" class="cursor-pointer group flex items-center justify-center gap-1.5 bg-white/10 border border-white/20 hover:bg-white/15 px-3.5 py-2 rounded-full text-xs sm:text-sm text-white font-bold active:scale-95 transition-all w-fit mx-auto sm:mx-0 shrink-0" title="點擊一鍵複製代碼">
                 <i class="fa-solid fa-ticket text-yellow-400 mr-1 animate-pulse"></i> 
                 <span>輸入代碼 <span class="bg-yellow-400 text-purple-950 px-2 py-0.5 rounded mx-0.5 font-mono text-xs font-black">GPM300</span> 再折 300</span>
@@ -258,7 +289,7 @@
               </div>
             </div>
             
-            <!-- 下排：領取限時優惠按鈕 (加入 pulse-btn 微呼吸效果與金黃漸層) -->
+            <!-- 下排：領取限時優惠按鈕 (呼吸效果) -->
             <a href="https://learning.parenting.com.tw/plans/467de1dc-cefd-4a7c-a852-ee32c81e91a2?utm_source=SiteTopic.website&utm_medium=referral&utm_campaign=cp_r_2606bopomofo_course_bundle_lp02_20260616" target="_blank" rel="noopener noreferrer" class="btn-action pulse-btn w-full py-3.5 px-5 rounded-2xl font-black text-base sm:text-xl transition-all duration-300 text-center block">
               <span class="whitespace-nowrap">搶先領取限時優惠 ➔</span>
             </a>
