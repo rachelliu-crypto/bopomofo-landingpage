@@ -4,34 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>雙課大禮包限時特惠</title>
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script> 
-  <!-- Font Awesome Icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
-    /* 核心優化：允許滾動，但徹底隱藏滾動條（滑桿），並確保不晃動 */
     html, body {
       font-family: 'Noto Sans TC', sans-serif;
       background-color: transparent; 
       margin: 0;
       padding: 0;
-      overflow-x: hidden; /* 防止左右晃動 */
-      overflow-y: auto;   /* 允許上下滾動 */
-      
-      /* 針對 IE、Edge 和 Firefox 隱藏滾動條 */
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
+      overflow-x: hidden; 
+      overflow-y: auto;   
+      -ms-overflow-style: none;  
+      scrollbar-width: none;  
       -webkit-font-smoothing: antialiased;
     }
 
-    /* 針對 Chrome、Safari 和 Opera 隱藏滾動條 */
     html::-webkit-scrollbar, body::-webkit-scrollbar {
       display: none;
     }
 
-    /* 主卡片改為深紫漸層與厚白邊框樣式 */
     .mega-course-card {
       background: linear-gradient(to bottom right, #5b4a9a, #3a2e66); 
       border: 4px solid #ffffff; 
@@ -46,7 +38,6 @@
       box-shadow: 0 25px 50px -10px rgba(72, 58, 122, 0.7);
     }
 
-    /* 跑馬燈光束閃過效果 */
     .shine::after {
       content: '';
       position: absolute;
@@ -71,7 +62,6 @@
       20%, 100% { left: 150%; }
     }
 
-    /* 呼吸按鈕動畫 - 增加點擊衝動 */
     @keyframes pulse-subtle {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.03); }
@@ -81,7 +71,6 @@
       animation: pulse-subtle 2s infinite ease-in-out;
     }
 
-    /* 漸層互動按鈕 */
     .btn-action {
       background: linear-gradient(to bottom, #fbbf24, #f59e0b);
       color: #3a2e66;
@@ -98,7 +87,18 @@
       box-shadow: 0 15px 25px -5px rgba(251, 191, 36, 0.6);
     }
 
-    /* ==================== 參考語法的極致防滑桿輪播結構 ==================== */
+    @keyframes white-glow {
+      0%, 100% {
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15), 0 0 0 0 rgba(255, 255, 255, 0.25);
+      }
+      50% {
+        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.35), 0 0 0 6px rgba(255, 255, 255, 0);
+      }
+    }
+    .glowing-coupon {
+      animation: white-glow 2s infinite ease-in-out;
+    }
+
     .carousel-container {
       position: relative;
       width: 100%;
@@ -119,7 +119,6 @@
       padding: 4px;
     }
 
-    /* 手機版輪播特定結構：僅在 md (768px) 以下生效，避免裁切與滑動溢出 */
     @media (max-width: 767px) {
       .mobile-carousel-container {
         position: relative;
@@ -142,30 +141,23 @@
 </head>
 <body>
 
-  <!-- 將原本在 body 的 py-6 px-3 sm:px-6 移動至此處，防止外層 iframe 誤判高度 -->
   <section class="max-w-4xl mx-auto flex flex-col gap-6 relative py-6 px-3 sm:px-6">
 
-    <!-- 頂部溫慢引言 -->
     <div class="w-full text-center leading-relaxed px-4 py-2">
       <p class="text-gray-800 text-[16px] sm:text-[18px] font-medium max-w-xl mx-auto">
         小一開學後的短短十週內，孩子就要認識完所有注音符號、學會拼音。<br class="hidden sm:inline">你是不是也開始擔心孩子「會不會跟不上？」
       </p>
     </div>
 
-    <!-- 區塊一：別擔心！你可以從這裡獲得 (黃色主題，上下排列) -->
     <div class="w-full bg-gradient-to-br from-[#fbbf24] to-[#f59e0b] rounded-[2.5rem] border-4 border-white shadow-[0_15px_30px_-5px_rgba(245,158,11,0.25)] p-5 sm:p-8 flex flex-col relative">
       
-      <!-- 標題與圖示在同一行 -->
       <div class="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-5 text-center">
-        <!-- 工具箱圖示 -->
         <div class="bg-gray-800 w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-md border-b-2 border-gray-950 shrink-0">
           <i class="fa-solid fa-toolbox text-yellow-400 text-lg sm:text-xl"></i>
         </div>
-        <!-- 大標題 -->
         <h3 class="text-base sm:text-lg font-black text-gray-900 tracking-tight">別擔心！你可以從這裡獲得</h3>
       </div>
 
-      <!-- 攻略包好禮清單 -->
       <div class="bg-white rounded-[1.75rem] border-2 border-white/50 shadow-[inset_0_2px_8px_rgba(0,0,0,0.05),0_4px_15px_-3px_rgba(0,0,0,0.05)] px-3 sm:px-6 py-5">
         <p class="text-gray-950 font-black text-[16px] sm:text-[20px] tracking-wide flex flex-wrap items-center justify-center gap-y-2 gap-x-2.5 sm:gap-x-4">
           <span class="flex items-center gap-1.5">🎮 拼音小遊戲</span>
@@ -179,48 +171,36 @@
       </div>
     </div>
 
-    <!-- 大禮包一體化卡片 (加入 shine 光束動效) -->
     <div class="mega-course-card z-10 shine">
       <div class="p-4 sm:p-8 space-y-6">
         
-        <!-- 主副標題區 (沿用您原本無動態的禮物盒與 3D 立體底框樣式) -->
         <div class="space-y-3 text-center mb-6 sm:mb-8">
-          <!-- 禮物盒圖示與文字 -->
           <div class="inline-flex items-center justify-center gap-3 sm:gap-4 mb-1">
-            <!-- 禮物盒圖示 -->
             <div class="bg-yellow-400 w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl border-b-4 border-yellow-600 shrink-0">
               <i class="fa-solid fa-gift text-purple-900 text-lg sm:text-xl"></i>
             </div>
-            <!-- 標題 -->
             <h3 class="text-base sm:text-lg font-black text-white tracking-tight">還有！超值合購優惠</h3>
           </div>
-          <!-- 主標題 -->
           <h4 class="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-wide leading-tight break-words">
             <span class="inline">注音趴＋拼音趴</span><span class="inline bg-gradient-to-r from-yellow-300 to-amber-400 bg-clip-text text-transparent ml-1 sm:ml-2">雙課大禮包</span>
           </h4>
         </div>
 
-        <!-- ==================== 課程亮點展示區 (改為參考語法的防切防溢出純 CSS 動態軌道) ==================== -->
         <div class="relative pb-1 mb-2 sm:mb-4">
           
-          <!-- 手機版防切容器，在桌機(md)上寬度正常無輪播 -->
           <div class="mobile-carousel-container w-full overflow-hidden md:overflow-visible touch-pan-y">
             <div id="carousel-track" class="mobile-carousel-track md:grid md:grid-cols-2 md:gap-4 md:translate-x-0 touch-pan-y" style="transform: translateX(0%);">
               
-              <!-- 課程卡片 1：兒童注音趴 -->
               <div class="mobile-carousel-slide w-full md:w-auto flex-shrink-0 md:flex-shrink px-2">
                 <div class="bg-white rounded-3xl p-4 sm:p-5 border border-amber-200/60 flex flex-col gap-4 justify-between h-full relative overflow-hidden shadow-md">
                   
-                  <!-- 圖片區 -->
                   <div class="w-full relative">
                     <div class="relative rounded-2xl overflow-hidden aspect-[16/9] bg-slate-50 border border-slate-100 shadow-sm">
                       <img src="https://image.fevercdn.com?bucket=picture-original.fevercdn.com&filepath=parenting%2F5%2F2103%2Ffbb7121133203da17d96ec12.png" alt="注音趴課程" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80'">
                     </div>
                   </div>
 
-                  <!-- 底部內容區 -->
                   <div class="flex items-center justify-between gap-4 mt-2">
-                    <!-- 左欄：亮點文字清單 -->
                     <div class="flex-1">
                       <ul class="space-y-2 text-slate-800 text-sm sm:text-base md:text-lg">
                         <li class="flex items-center gap-1.5">
@@ -238,12 +218,10 @@
                       </ul>
                     </div>
 
-                    <!-- 右欄：海報框 -->
                     <div class="relative shrink-0 mr-2 sm:mr-4">
                       <div class="w-24 h-32 sm:w-28 sm:h-38 rounded-xl overflow-hidden border-4 border-white shadow-xl bg-white shrink-0">
                         <img src="https://image.fevercdn.com?bucket=picture-original.fevercdn.com&filepath=parenting%2F5%2F2103%2F44a14f87c1f707e14a8b648c.png" alt="注音海報" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?auto=format&fit=crop&w=300&q=80'">
                       </div>
-                      <!-- 右上角膠囊標籤 -->
                       <div class="absolute -top-1.5 -right-2 sm:-top-2 sm:-right-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-black text-[11px] sm:text-sm px-2.5 py-1 rounded-full shadow-md whitespace-nowrap border-2 border-white tracking-wide">
                         \ 附注音海報 /
                       </div>
@@ -253,20 +231,16 @@
                 </div>
               </div>
 
-              <!-- 課程卡片 2：兒童拼音趴 -->
               <div class="mobile-carousel-slide w-full md:w-auto flex-shrink-0 md:flex-shrink px-2">
                 <div class="bg-white rounded-3xl p-4 sm:p-5 border border-purple-200/60 flex flex-col gap-4 justify-between h-full relative overflow-hidden shadow-md">
                   
-                  <!-- 圖片區 -->
                   <div class="w-full relative">
                     <div class="relative rounded-2xl overflow-hidden aspect-[16/9] bg-slate-50 border border-slate-100 shadow-sm">
                       <img src="https://image.fevercdn.com?bucket=picture-original.fevercdn.com&filepath=parenting%2F5%2F2103%2F8a83beff83b6bf77df8bbe1f.png" alt="拼音趴課程" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80'">
                     </div>
                   </div>
 
-                  <!-- 底部內容區 -->
                   <div class="flex items-center justify-between gap-4 mt-2">
-                    <!-- 左欄：亮點文字清單 -->
                     <div class="flex-1">
                       <ul class="space-y-2 text-slate-800 text-sm sm:text-base md:text-lg">
                         <li class="flex items-center gap-1.5">
@@ -284,12 +258,10 @@
                       </ul>
                     </div>
 
-                    <!-- 右欄：字卡框 -->
                     <div class="relative shrink-0 mr-2 sm:mr-4">
                       <div class="w-24 h-32 sm:w-28 sm:h-38 rounded-xl overflow-hidden border-4 border-white shadow-lg bg-white shrink-0">
                         <img src="https://image.fevercdn.com?bucket=picture-original.fevercdn.com&filepath=parenting%2F5%2F2103%2F1c0a4376047c3360755fcc01.png" alt="拼音字卡" class="w-full h-full object-cover" style="object-position: 95% center;" onerror="this.src='https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=300&q=80'">
                       </div>
-                      <!-- 右上角膠囊標籤 -->
                       <div class="absolute -top-1.5 -right-2 sm:-top-2 sm:-right-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-black text-[11px] sm:text-sm px-2.5 py-1 rounded-full shadow-md whitespace-nowrap border-2 border-white tracking-wide">
                         \ 附拼音字卡 /
                       </div>
@@ -302,7 +274,6 @@
             </div>
           </div>
 
-          <!-- 輪播控制鈕：完全比照參考語法設計，只在手機版(md:hidden)顯示 -->
           <div class="flex items-center justify-between mt-4 px-2 md:hidden relative z-20">
             <button onclick="prevSlide()" class="w-6 h-6 rounded-full border border-white/40 flex items-center justify-center text-white hover:bg-white/10 transition-colors">
               <i class="fa-solid fa-chevron-left text-[8px]"></i>
@@ -320,35 +291,32 @@
 
         </div>
 
-        <!-- 結帳促銷區 -->
         <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-white/20 shadow-md">
           <div class="space-y-4">
             
-            <!-- 上排：價格與折扣碼一鍵複製 -->
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-white/10 pb-3">
-              <!-- 左側價格 -->
-              <div class="text-center sm:text-left">
+              <div class="text-center sm:text-left shrink-0">
                 <span class="text-white/60 line-through text-xs block">原價 $7,600</span>
                 <div class="text-yellow-400 font-black text-2xl sm:text-3xl tracking-tight mt-0.5 whitespace-nowrap">
                   NT$ <span class="text-3xl sm:text-4xl text-yellow-300">5,490</span>
                 </div>
               </div>
               
-              <!-- 右側折扣碼複製 -->
-              <div id="coupon-btn" onclick="copyCouponCode('GPM300')" class="cursor-pointer group flex items-center justify-center gap-1.5 bg-white/10 border border-white/20 hover:bg-white/15 px-3.5 py-2 rounded-full text-xs sm:text-sm text-white font-bold active:scale-95 transition-all w-fit mx-auto sm:mx-0 shrink-0" title="點擊一鍵複製代碼">
-                <i class="fa-solid fa-ticket text-yellow-400 mr-1 animate-pulse"></i> 
-                <span>輸入代碼 <span class="bg-yellow-400 text-purple-950 px-2 py-0.5 rounded mx-0.5 font-mono text-xs font-black">GPM300</span> 再折 300</span>
-                <span class="text-white/20">|</span>
-                <span class="text-yellow-400 flex items-center gap-0.5 shrink-0">
+              <div id="coupon-btn" onclick="copyCouponCode('GPM300')" class="glowing-coupon cursor-pointer group flex items-center justify-center gap-2.5 bg-white hover:bg-slate-50 text-slate-800 px-4 py-2.5 rounded-full text-xs sm:text-sm font-bold active:scale-95 transition-all w-fit mx-auto sm:mx-0 shrink-0 border border-purple-200 shadow-md" title="點擊一鍵複製代碼">
+                <i class="fa-solid fa-ticket text-purple-600 text-sm"></i> 
+                <span>本頁限定！結帳輸入 <span class="bg-purple-100 text-purple-950 px-1.5 py-0.5 rounded font-mono text-xs sm:text-sm font-black">GPM300</span> 再折三百</span>
+                <span class="text-slate-200">|</span>
+                <span class="text-purple-600 flex items-center gap-0.5 shrink-0 font-bold hover:scale-105 transition-transform">
                   <i class="fa-regular fa-copy"></i>複製
                 </span>
               </div>
             </div>
             
-            <!-- 下排：領取限時優惠按鈕 (呼吸效果) -->
-            <a href="https://learning.parenting.com.tw/plans/467de1dc-cefd-4a7c-a852-ee32c81e91a2?utm_source=SiteTopic.website&utm_medium=referral&utm_campaign=cp_r_2606bopomofo_course_bundle_lp02_20260616" target="_blank" rel="noopener noreferrer" class="btn-action pulse-btn w-full py-3.5 px-5 rounded-2xl font-black text-base sm:text-xl transition-all duration-300 text-center block">
-              <span class="whitespace-nowrap">搶先領取限時優惠 ➔</span>
-            </a>
+            <div class="space-y-2">
+              <a href="https://learning.parenting.com.tw/plans/467de1dc-cefd-4a7c-a852-ee32c81e91a2?utm_source=SiteTopic.website&utm_medium=referral&utm_campaign=cp_r_2606bopomofo_course_bundle_lp02_20260616" target="_blank" rel="noopener noreferrer" class="btn-action pulse-btn w-full py-3.5 px-5 rounded-2xl font-black text-base sm:text-xl transition-all duration-300 text-center block">
+                <span class="whitespace-nowrap">搶先領取限時優惠 ➔</span>
+              </a>
+            </div>
 
           </div>
         </div>
@@ -358,14 +326,11 @@
 
   </section>
 
-  <!-- 貼心一鍵複製代碼與輪播手勢腳本 -->
   <script>
-    // --- 輪播一：雙課大禮包輪播控制機制 (僅在非 md 電腦版寬度下生效) ---
     let currentSlide = 0;
     const totalSlides = 2;
 
     function updateCarousel() {
-      // 如果視窗寬度大於等於 768px (md)，不執行輪播位移，強制重設回歸 grid 並排
       if (window.innerWidth >= 768) {
         document.getElementById('carousel-track').style.transform = 'none';
         return;
@@ -374,7 +339,6 @@
       const track = document.getElementById('carousel-track');
       track.style.transform = `translateX(-${currentSlide * 100}%)`;
       
-      // 更新圓點樣式
       const dots = document.querySelectorAll('#carouselDots span');
       dots.forEach((dot, index) => {
         if (index === currentSlide) {
@@ -387,7 +351,6 @@
       });
     }
 
-    // 監聽視窗縮放，確保在桌機/手機切換時顯示正常
     window.addEventListener('resize', updateCarousel);
 
     function nextSlide() {
@@ -408,7 +371,6 @@
       updateCarousel();
     }
 
-    // --- 舊圖像、字卡的 onerror Fallback 機制 ---
     const allImages = document.querySelectorAll('img');
     allImages.forEach(img => {
       img.addEventListener('error', function() {
@@ -418,7 +380,6 @@
       });
     });
 
-    // --- 手勢觸控滑動支援 (與參考語法的流暢性與物理碰撞機制一致) ---
     let startX = 0;
     let startY = 0;
     let isDragging = false;
@@ -439,7 +400,6 @@
       const diffX = startX - endX;
       const diffY = startY - endY;
 
-      // 關鍵優化：只有當「左右滑動距離大於上下滑動距離」時，才執行輪播換頁，不干擾上下捲頁
       if (Math.abs(diffX) > Math.abs(diffY)) {
         if (diffX > 40) {
           nextSlide();
@@ -450,7 +410,6 @@
       isDragging = false;
     }, { passive: true });
 
-    // --- 一鍵複製折價券腳本 ---
     function copyCouponCode(code) {
       const tempTextArea = document.createElement('textarea');
       tempTextArea.value = code;
@@ -465,13 +424,13 @@
           const couponBtn = document.getElementById('coupon-btn');
           const originalHTML = couponBtn.innerHTML;
           
-          couponBtn.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400 mr-1"></i> 已複製代碼！`;
-          couponBtn.className = "inline-flex items-center justify-center text-xs sm:text-sm text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 font-bold tracking-wide px-3.5 py-2 rounded-full shadow-sm transition-all w-fit mx-auto sm:mx-0";
+          couponBtn.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 mr-1 animate-bounce"></i> 已複製！結帳請貼上折抵`;
+          couponBtn.className = "inline-flex items-center justify-center text-xs sm:text-sm text-emerald-900 bg-emerald-50 border-2 border-emerald-400 px-4 py-2.5 rounded-full font-black shadow-md transition-all w-fit mx-auto sm:mx-0 shrink-0";
           
           setTimeout(() => {
             couponBtn.innerHTML = originalHTML;
-            couponBtn.className = "cursor-pointer group flex items-center justify-center gap-1.5 bg-white/10 border border-white/20 hover:bg-white/15 px-3.5 py-2 rounded-full text-xs sm:text-sm text-white font-bold active:scale-95 transition-all w-fit mx-auto sm:mx-0 shrink-0";
-          }, 2000);
+            couponBtn.className = "glowing-coupon cursor-pointer group flex items-center justify-center gap-2.5 bg-white hover:bg-slate-50 text-slate-800 px-4 py-2.5 rounded-full text-xs sm:text-sm font-bold active:scale-95 transition-all w-fit mx-auto sm:mx-0 shrink-0 border border-purple-200 shadow-md";
+          }, 2500);
         }
       } catch (err) {
         console.error('複製失敗: ', err);
