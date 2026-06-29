@@ -13,16 +13,11 @@
       background-color: transparent; 
       margin: 0;
       padding: 0;
-      overflow-x: hidden; 
-      /* 關鍵修正：將 overflow-y 改為 visible，移除 iframe 內部滾動限制，防止手機滾動手勢被困在內嵌區塊中 */
-      overflow-y: visible;   
-      -ms-overflow-style: none;  
-      scrollbar-width: none;  
+      /* 終極修正：徹底將 overflow 設為 visible，並強制高度為 auto */
+      /* 這能防止 iOS & LINE 瀏覽器在 iframe 內自動建立獨立滾動容器，手勢得以 100% 傳遞至外層發燒網 */
+      overflow: visible !important; 
+      height: auto !important;   
       -webkit-font-smoothing: antialiased;
-    }
-
-    html::-webkit-scrollbar, body::-webkit-scrollbar {
-      display: none;
     }
 
     /* 主卡片改為深紫漸層與厚白邊框樣式 */
@@ -144,7 +139,8 @@
 </head>
 <body>
 
-  <section class="max-w-4xl mx-auto flex flex-col gap-6 relative py-6 px-3 sm:px-6">
+  <!-- 將 overflow-x-hidden 改套用在最外層 section，既能防左右晃動，又絕不鎖住上下滑動手勢 -->
+  <section class="max-w-4xl mx-auto flex flex-col gap-6 relative py-6 px-3 sm:px-6 overflow-x-hidden">
 
     <div class="w-full text-center leading-relaxed px-4 py-2">
       <p class="text-gray-800 text-[16px] sm:text-[18px] font-medium max-w-xl mx-auto">
@@ -368,6 +364,7 @@
       updateCarousel();
     }
 
+    // 點擊控制圓點
     function goToSlide(index) {
       if (window.innerWidth >= 768) return;
       currentSlide = index;
